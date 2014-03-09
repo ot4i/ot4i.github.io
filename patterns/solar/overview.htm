@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<!--
+Sample program for use with IBM Integration Bus
+© Copyright International Business Machines Corporation 2010
+Licensed Materials - Property of IBM
+-->
+<head>
+    <meta content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2010"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <title>Pattern Specification</title>
+</head>
+<body>
+<h1 class="topictitle1">Daily Solar Event Calculator</h1>
+<div>
+    <p class="shortdesc">
+    </p>
+</div>
+<p class="description">
+This sample creates a pattern that calculates various sunrise and sunset times for a specific date and 
+position on Earth. This sample illustrates the use of a message flow as an exemplar for a pattern 
+authoring project.
+</p>
+
+<div class="section">
+    <h2 class="sectiontitle">About the Solar Pattern Authoring sample</h2>
+</div>
+
+<p>
+This sample illustrates the use of a message flow as an exemplar for a pattern 
+authoring project. It uses an MQInput node to parse an XML message that 
+contains a date (see the XML and XML schema sections), and it uses an MQOutput node 
+to pass on the augmented message. A PHPCompute node is included that uses 
+the basic PHP function <code>date_sun_info($date,$latitude,$longitude)</code> 
+to generate the sunrise and sunset times.
+</p>
+<p>
+The values for <code>Latitude</code> and <code>Longitude</code> are provided by the pattern by using the 
+function <code>mb_get_user_defined_property(<var>user-defined property name</var>)</code> 
+to extract values from the named user-defined properties, which are defined in the scope of 
+the message flow in the User Defined Properties tab.
+</p>
+<p>
+The output is a WebSphere MQ XML message containing the following information:</p>
+<ul>
+    <li>
+        sunrise
+    </li>
+    <li>
+        sunset
+    </li>
+    <li>
+        transit
+    </li>
+    <li>
+        civil_twilight_begin
+    </li>
+    <li>
+        civil_twilight_end
+    </li>
+    <li>
+        nautical_twilight_begin
+    </li>
+    <li>
+        nautical_twilight_end
+    </li>
+    <li>
+        astronomical_twilight_begin
+    </li>
+    <li>
+        astronomical_twilight_end
+    </li>
+</ul>
+
+<div class="section">
+    <h2 class="sectiontitle">XML schema for the message</h2>
+</div>
+
+<pre>
+  &lt;?xml version="1.0"?&gt;
+  &lt;schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://caspian.hursley.ibm.com"
+    xmlns:solar="http://caspian.hursley.ibm.com" elementFormDefault="qualified"&gt;
+    &lt;element name="sun"&gt;
+      &lt;complexType&gt;
+        &lt;sequence&gt;
+          &lt;element name="dateQuery" type="date"/&gt;
+          &lt;element name="sunEventTime" minOccurs="0" maxOccurs="1"&gt;
+            &lt;complexType&gt;
+              &lt;sequence&gt;
+                &lt;element name="sunrise" type="date"/&gt;
+                &lt;element name="sunset" type="date"/&gt;
+                &lt;element name="transit" type="date"/&gt;
+                &lt;element name="civil_twilight_begin" type="date"/&gt;
+                &lt;element name="civil_twilight_end" type="date"/&gt;
+                &lt;element name="nautical_twilight_begin" type="date"/&gt;
+                &lt;element name="nautical_twilight_end" type="date"/&gt;
+                &lt;element name="astronomical_twilight_begin" type="date"/&gt;
+                &lt;element name="astronomical_twilight_end" type="date"/&gt;
+              &lt;/sequence&gt;
+            &lt;/complexType&gt;
+          &lt;/element&gt;
+        &lt;/sequence&gt;
+      &lt;/complexType&gt;
+    &lt;/element&gt;
+  &lt;/schema&gt;
+</pre>
+
+<div class="section">
+    <h2 class="sectiontitle">XML for the input message</h2>
+</div>
+
+<pre>
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    &lt;solar:sun xmlns:solar="http://caspian.hursley.ibm.com"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://caspian.hursley.ibm.com solar.xsd"&gt;
+        &lt;solar:dateQuery&gt;2010-04-15&lt;/solar:dateQuery&gt;
+    &lt;/solar:sun&gt;
+</pre>
+
+<p>
+Your message must include a date in the <code>dateQuery</code> element, 
+for example, 2010-04-15, in UTC format (YYYY-MM-DD).
+</p> 
+&nbsp; 
+</body> 
+</html> 
+
