@@ -13,6 +13,21 @@
             "name": "Samples",
             "parent_category_id": "com.ibm.etools.pattern",
             "doc_url": "http://ot4i.github.io/patterns/categories/Id128060cd5424813434183055e99/overview.htm"
+        },
+
+
+        {
+            "id": "categories.Id137f11207e577a6cd936f6b8717",
+            "name": "Mobile",
+            "parent_category_id": "com.ibm.etools.pattern",
+            "doc_url": "http://hosie.hursley.ibm.com:3000/pattern-repo/categories/Id137f11207e577a6cd936f6b8717/overview.htm"
+        },
+
+        {
+            "id": "categories.Id13e1237d9d5444112c7f0ad8e88",
+            "name": "MessageSight",
+            "parent_category_id": "categories.Id137f11207e577a6cd936f6b8717",
+            "doc_url": "http://hosie.hursley.ibm.com:3000/pattern-repo/categories/Id13e1237d9d5444112c7f0ad8e88/overview.htm"
         }
 
 
@@ -69,7 +84,7 @@
                 "feature_group_name" : "com.ibm.etools.mft.pattern.messaging.eventfilter.Feature.feature.group",
                 "nl_feature_group_name" : "com.ibm.etools.mft.pattern.messaging.eventfilter.Feature.NL.feature.group",
                 "qualifier" : "1.0.0.0",
-                "patternzipURL" : "http://github.com/ot4i/event-filter-pattern/releases/download/v1.0/EventFilterPattern.patternzip",
+                "patternzipURL" : "https://github.com/ot4i/event-filter-pattern/releases/download/v1.0/EventFilterPattern.patternzip",
                 "patternzipSize" : "4099 KB"
 
               }
