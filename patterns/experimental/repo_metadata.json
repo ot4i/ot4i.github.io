@@ -20,14 +20,14 @@
             "id": "categories.Id137f11207e577a6cd936f6b8717",
             "name": "Mobile",
             "parent_category_id": "com.ibm.etools.pattern",
-            "doc_url": "http://hosie.hursley.ibm.com:3000/pattern-repo/categories/Id137f11207e577a6cd936f6b8717/overview.htm"
+            "doc_url": "http://ot4i.github.io/patterns/categories/Id137f11207e577a6cd936f6b8717/overview.htm"
         },
 
         {
             "id": "categories.Id13e1237d9d5444112c7f0ad8e88",
             "name": "MessageSight",
             "parent_category_id": "categories.Id137f11207e577a6cd936f6b8717",
-            "doc_url": "http://hosie.hursley.ibm.com:3000/pattern-repo/categories/Id13e1237d9d5444112c7f0ad8e88/overview.htm"
+            "doc_url": "http://ot4i.github.io/patterns/categories/Id13e1237d9d5444112c7f0ad8e88/overview.htm"
         }
 
 
