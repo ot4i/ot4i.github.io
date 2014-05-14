@@ -12,7 +12,7 @@ body {
 .banner {
     padding: 0px 15px 0px 15px;
     background: #eee;
-    margin: 50px 0 20px 0;
+    margin: 0 0 20px 0;
 }    
 
 div.features h3 {
@@ -58,3 +58,38 @@ div.features p {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
+
+iframe.seamless{
+    background-color: transparent;
+    border: 0px none transparent;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.ot4i-nav-tree .nav .nav{
+    padding-left: 20px;
+    
+}
+
+/* TODO show parent of active nav nested list */
+.ot4i-nav-tree ul.opens{
+    display: block;
+    padding-left: 30px;
+}
+
+
+.ot4i-nav-tree ul.closed {
+    display: none;           
+} 
+
+/* show active nested list */
+.ot4i-nav-tree .nav>.active>ul.nav {
+    display: block;           
+}
+
+/* show children of active nav nested list */
+.ot4i-nav-tree .active>ul.nav {
+    display: block;           
+}
+
+
