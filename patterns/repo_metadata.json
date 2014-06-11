@@ -30,7 +30,7 @@
             "name": "Solar",
             "category_id": "categories.Id128060cd5424813434183055e99",
             "doc_url": "http://ot4i.github.io/patterns/solar/overview.htm",
-            "ibm_supported": true,
+            "ibm_supported": false,
 
 
 
