@@ -7,15 +7,6 @@
             "parent_category_id": null,
             "doc_url": null
         },
-
-        {
-            "id": "categories.Id128060cd5424813434183055e99",
-            "name": "Samples",
-            "parent_category_id": "com.ibm.etools.pattern",
-            "doc_url": "http://ot4i.github.io/patterns/categories/Id128060cd5424813434183055e99/overview.htm"
-        },
-
-
         {
             "id": "categories.Id137f11207e577a6cd936f6b8717",
             "name": "Mobile",
@@ -40,33 +31,7 @@
 
     "patterns": [
 
-        {
-            "id" : "com.ibm.etools.mft.SolarPatternAuthoring.pattern",
-            "name": "Solar",
-            "category_id": "categories.Id128060cd5424813434183055e99",
-            "doc_url": "http://ot4i.github.io/patterns/solar/overview.htm",
-            "ibm_supported": true,
-
-
-
-            "versions" :
-
-            [
-              { "number" : 1.0,
-                "valid_for_product_version": [ "10*" ],
-                "feature_group_name" : "com.ibm.etools.mft.SolarPatternAuthoring.Feature.feature.group",
-                "nl_feature_group_name" : "com.ibm.etools.mft.SolarPatternAuthoring.Feature.NL.feature.group",
-                "qualifier" : "9.0.0.0",
-                "patternzipURL" : "https://github.com/ot4i/solar-pattern/releases/download/1.0/Solar.patternzip",
-                "patternzipSize" : "68 KB"
-
-              }
-
-
-            ]
-
-
-        },
+        
         {
             "id" : "com.ibm.etools.mft.pattern.messaging.eventfilter",
             "name": "Event Filter",
