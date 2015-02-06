@@ -1,0 +1,65 @@
+{
+	"managerUrl":"http://ot4i.github.io/tutorials/en/manager.htm",
+	"managerVersion": "1.0",
+	"downloadableForLocalInstall":"https://github.com/ot4i/tutorials/releases/download/localInstall.zip",
+    "categories": [
+    	{
+    		"name":"MQ Category",
+    		"description":"These tutorials illustrate how to configire and use MQ nodes in v10",
+    		"descriptionUrl":"http://ot4i.github.io/tutorials/en/categories/MQConfig_Category_overview.htm",
+    		"iibVersions": "",
+    		"tags":"mq;configuration",
+    		"tutorials":[
+	
+		        {
+		            "name"            : "Tutorial One",
+		            "version"		  : "",
+		            "iibVersions"	  : "10.*-11.*",
+		            "shortDesc"       : "This is a short description of Tutorial One! :)",
+		            "detailsURL"      : "http://ot4i.github.io/tutorials/en/tutorial1/details.html",
+		            "stepsURL"        : "http://ot4i.github.io/tutorials/en/tutorial1/steps.html",
+		            "zipURL"          : "http://ot4i.github.io/tutorials/en/tutorial1/releases/download/one_pi1.zip",
+		            "barFile"         : "<workspace>/BARfiles/tutorialONE.bar",
+		            "editorResPaths"   : [
+		            						{
+		            							"editor" : "Flow",
+		            						  	"wspath" : "<workspace>/App1/folder1/myFlow.msgflow"
+		            						},
+		            						{
+		            							"editor" : "DFDL",
+		            						  	"wspath" : "<workspace>/Lib/folder2/dfdlfile.xsd"
+		            						 },	
+		            						 {
+		            							"editor" : "mqsiScript",
+		            						  	"wspath" : "<workspace>/Lib/folder2/createqueus.bat"
+		            						 }	
+		            					]
+				},
+		        {
+		            "name"            : "Tutorial Two",
+		            "version"		  : "",
+		            "iibVersions"	  : "10.*-11.*",
+		            "shortDesc"       : "This is a short description of Tutorial Two! :)",
+		            "detailsURL"      : "http://ot4i.github.io/tutorials/en/tutorial2/details.html",
+		            "stepsURL"        : "http://ot4i.github.io/tutorials/en/tutorial2/steps.html",
+		            "zipURL"          : "http://ot4i.github.io/tutorials/en/tutorial2/releases/download/one_pi2.zip",
+		            "barFile"         : "<workspace>/BARfiles/tutorialTWO.bar",
+		            "editorResPaths"   : [
+		            						{
+		            							"editor" : "Flow",
+		            						  	"wspath" : "<workspace>/App2/folder1/myFlow.msgflow"
+		            						},
+		            						{
+		            							"editor" : "DFDL",
+		            						  	"wspath" : "<workspace>/Lib2/folder2/dfdlfile.xsd"
+		            						 },	
+		            						 {
+		            							"editor" : "mqsiScript",
+		            						  	"wspath" : "<workspace>/Lib2/folder2/createqueus.bat"
+		            						 }	
+		            					]
+				}
+			]
+		}
+	]
+}
