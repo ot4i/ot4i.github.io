@@ -1,7 +1,6 @@
 {
 	"managerUrl":"http://ot4i.github.io/tutorials/en/TutorialManager.html",
 	"managerVersion": "1.0",
-	"metadataUrl":"http://ot4i.github.io/tutorials/en/repo_metadata.json",
 	"downloadableForLocalInstall":"https://github.com/ot4i/tutorials/releases/download/localInstall.zip",
     "categories": [
     	{
