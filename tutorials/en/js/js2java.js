@@ -125,8 +125,9 @@
             tutDesc.innerHTML = tutorials[selectBox.selectedIndex].shortDesc;
         }//if       
 
-        tutorialID  = tutorials[selectBox.selectedIndex].id ;
-	
+        //Need to pass the name of the tutorial to the selection function
+        tutorialID  = tutorials[selectBox.selectedIndex].name ;
+	    alert(tutorialID);
 
 
      }
