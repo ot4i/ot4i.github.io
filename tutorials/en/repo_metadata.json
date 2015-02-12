@@ -1,15 +1,14 @@
 {
-	"managerUrl":"http://ot4i.github.io/tutorials/en/TutorialManager.html",
+	"managerUrl":"http://ot4i.github.io/tutorials",
 	"managerVersion": "1.0",
 	"downloadableForLocalInstall":"https://github.com/ot4i/tutorials/releases/download/localInstall.zip",
     "categories": [
     	{
-    		"name":"MQ Category",
-    		"description":"These tutorials illustrate how to configire and use MQ nodes in v10",
-    		"descriptionUrl":"http://ot4i.github.io/tutorials/en/categories/MQConfig_Category_overview.htm",
+    		"name":"Tool Capabilities",
+    		"description":"These tutorials illustrate how to configire and use IIB tools in v10",
+    		"descriptionUrl":"http://ot4i.github.io/tutorials/en/categories/Tools_Category_overview.htm",
     		"iibVersions": "",
-    		"tags":"mq;configuration",
-    		"visible": "false",
+    		"visible": "true",
     		"tutorials":[
 	
 		        {
@@ -22,16 +21,23 @@
 		            "zipURL"        : "https://github.com/ekharlamov/ot4i.tutorials/releases/download/V1/Tutorial1PI.zip",
 		            "barFile"       : "<workspace>/BARfiles/tutorialONE.bar",
 		            "visible"		: "false",
+		            "tags"			: "mq;configuration",
+		            "durationText"  : "This tutorial will take approximately 5 minutes",
+		            "isPattern"		: "false",
+		            "isFavorite"	: "true",
 		            "editorResPaths"   : [
 		            						{
+		            							"id" : "MainFlow",
 		            							"editor" : "flow",
 		            						  	"wspath" : "<workspace>/Tutorial1App/bschema1/Tutorial1Flow.msgflow"
 		            						},
 		            						{
+		            							"id" : "MainSchema",
 		            							"editor" : "dfdl",
 		            						  	"wspath" : "<workspace>/Tutorial1App/taderc99.xsd"
 		            						 },	
 		            						 {
+		            						 	"id" : "MainScript",
 		            							"editor" : "text",
 		            						  	"wspath" : "<workspace>/Tutorial1App/iib_queues_create.mqsc"
 		            						 }	
@@ -47,27 +53,26 @@
 		            "zipURL"        : "https://github.com/ekharlamov/ot4i.tutorials/releases/download/V1/Tutorial2PI.zip",
 		            "barFile"       : "<workspace>/BARfiles/tutorialTWO.bar",
 		            "visible"		: "false",
+		            "tags"			: "mq;configuration",
+		            "durationText"  : "This tutorial will take approximately 5 minutes",
+		            "isPattern"		: "false",
+		            "isFavorite"	: "true",
 		            "editorResPaths"   : [
 		            						{
+		            							"id" : "MainFlow",
 		            							"editor" : "flow",
 		            						  	"wspath" : "<workspace>/Tutorial2App/Tutorial2Flow.msgflow"
 		            						},
-		            						{
-		            							"editor" : "xsd",
-		            						  	"wspath" : "<workspace>/Tutorial2App/UserData.xsd"
-		            						 },	
 		            						 {
+		            						 	"id" : "MainEsql",
 		            							"editor" : "",
 		            						  	"wspath" : "<workspace>/Tutorial2App/HTTPFlow_Compute.esql"
 		            						 },
 		            						 {
+		            						 	"id" : "MainMessage",
 		            							"editor" : "text",
 		            						  	"wspath" : "<workspace>/Tutorial2App/HTTPFlow_inputMessage.xml"
-		            						 },
-		            						 {
-		            							"editor" : "",
-		            						  	"wspath" : "<workspace>/Tutorial2App/HTTPTest.mbtest"
-		            						 }	
+		            						 }
 		            					]
 				}
 			]
