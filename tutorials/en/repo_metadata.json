@@ -27,6 +27,7 @@
 					"isPattern"	: false,
 					"isFavorite": true,
 					"isDefault" : true,
+					"projects"	: "Tutorial1App:BARfiles",
 					"editorResPaths" : 
 					[
 						{
@@ -60,6 +61,7 @@
 					"isPattern"	: true,
 					"isFavorite": true,
 					"isDefault" : false,
+					"projects"	: "Tutorial1App:BARfiles",
 					"editorResPaths" : 
 					[
 						{
@@ -93,6 +95,7 @@
 					"isPattern"	: false,
 					"isFavorite": true,
 					"isDefault" : false,
+					"projects"	: "Tutorial2App:BARfiles",
 					"editorResPaths" : 
 					[
 						{
@@ -136,6 +139,7 @@
 					"isPattern"	: false,
 					"isFavorite": true,
 					"isDefault" : false,
+					"projects"	: "Tutorial1App:BARfiles",
 					"editorResPaths" : 
 					[
 						{
@@ -169,6 +173,7 @@
 					"isPattern"	: false,
 					"isFavorite": true,
 					"isDefault" : false,
+					"projects"	: "Tutorial1App:BARfiles",
 					"editorResPaths" : 
 					[
 						{
@@ -193,16 +198,16 @@
 					"version"	: "",
 					"iibVersions"	: "10.*-11.*",
 					"shortDesc" : "This is a short description of Tutorial Five! :)",
-					"detailsURL" : "https://cdn.rawgit.com/ot4i/ot4i.tutorials/master/tutorial2/en/details.html",
-					"stepsURL" : "https://cdn.rawgit.com/ot4i/ot4i.tutorials/master/tutorial2/en/steps.html",
+					"detailsURL" : "https://cdn.rawgit.com/ekharlamov/ot4i.tutorials/master/tutorial2/en/details.html",
+					"stepsURL" : "https://cdn.rawgit.com/ekharlamov/ot4i.tutorials/master/tutorial2/en/steps.html",
 					"zipURL" : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/Tutorial2PI.zip",
 					"barFile" : "<workspace>/BARfiles/tutorialTWO.bar",
 					"visible"	: true,
 					"tags"	: "mq;configuration",
-					"durationText" : "This tutorial will take approximately 5 minutes",
 					"isPattern"	: true,
 					"isFavorite": true,
 					"isDefault" : true,
+					"projects"	: "Tutorial2App:BARfiles",
 					"editorResPaths" : 
 					[
 						{
