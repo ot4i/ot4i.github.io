@@ -1,0 +1,46 @@
+<html>
+
+<head>
+
+  <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+  <META HTTP-EQUIV="Expires" CONTENT="-1">
+
+  
+  <link href="css/main.css" rel="stylesheet">
+
+
+  <script src="js/json2.js"></script>
+
+  
+  <script src="js/js2java.js"></script>
+
+
+<script>
+
+  
+  window.onload=function() {
+
+   fillList();
+
+  };
+
+</script>
+</head>
+<body>
+<h1>Tutorial Gallery</h1>
+</br>
+</br>
+</br>
+
+<select id="styledSelect" class="blueText"name="tutorials" multiple onchange="changeFunc();">
+</select>
+
+
+<p id="tutorialDesc">
+</p>
+
+<button id="viewDetails" onclick="viewDetails()" disabled >View Details</button>
+<button id="startTutorial" onclick="startTutorial()" disabled >Start Tutorial</button>
+
+</body>
+</html>
