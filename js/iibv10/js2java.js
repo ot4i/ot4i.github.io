@@ -153,7 +153,7 @@
        if (result !== undefined){
           for (var i = 0; i < result.length; i++){
              var tutInfoString = result[i];
-             alert(tutInfoString);
+             //alert(tutInfoString);
              var tut = null;
                  tut = JSON.parse( tutInfoString );
                  tutorials.push(tut);  
@@ -163,17 +163,38 @@
       catch(e){
           alert( 'a java error occurred: ' + e.message );
       }//catch
-  //add the tutorials to the select box
-  //
-//  var selectBox = document.getElementById("styledSelect");
-//  if (selectBox )
-//  {
-//    var k=1;
-//    for (var j = 0; j < tutorials.length; j++)
-//    {
-//      //alert(tutorials[j].name);
-//      selectBox.options[selectBox.options.length] =new Option(tutorials[j].name, k);
-//      k = k + 1;
-//    }//for
-//  }//if
+	  //add the tutorials to the select widget.
+	  //For now we will use predefined tags scenarios and capabilities to distribute    
+	  //capabilities
+      var selectBoxc = document.getElementById("styledSelect_capabilities");
+      if (selectBoxc )
+      {
+	        var k=1;
+	        for (var j = 0; j < tutorials.length; j++)
+	        {
+	        	if (tutorials[j].tags.indexOf("capabilities") > -1)
+	        	{
+	        		alert("Adding the capabilities tutorial:" + tutorials[j].name);
+	        		selectBoxc.options[selectBoxc.options.length] =new Option(tutorials[j].name, k);
+	        	}
+	          k = k + 1;
+	        }//for
+      }//if
+            
+	  //scenarios    
+	  var selectBoxs = document.getElementById("styledSelect_scenarios");
+	  if (selectBoxs )
+	  {
+		    var k=1;
+		    for (var j = 0; j < tutorials.length; j++)
+		    {
+		    	if (tutorials[j].tags.indexOf("scenarios") > -1)
+	        	{
+			    	alert("Adding the capabilities tutorial:" + tutorials[j].name);
+			    	selectBoxs.options[selectBoxs.options.length] =new Option(tutorials[j].name, k);
+	        	}
+			    k = k + 1;
+		    }//for
+	  }//if
+  
 };
