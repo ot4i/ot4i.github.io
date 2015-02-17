@@ -5,10 +5,12 @@
 
    var tutorials = [];
 
-   function viewDetails() {
+   function viewDetails(selectName) {
 
-       var selectBox = document.getElementById("styledSelect");
-       
+       //var selectBox = document.getElementById("styledSelect");
+		alert ("Inside changeFunc:" + "" + selectName);   
+		var selectBox = document.getElementById(selectName);   
+		alert ("Select found. Size:" + selectBox.options.length);  
        var tutUrl = null;
 
         if (tutorials !== undefined) {
@@ -27,7 +29,7 @@
    function startTutorial(selectName) 
    {
        //var selectBox = document.getElementById("styledSelect");
-		alert ("Inside changeFunc:" + selectName);   
+		alert ("Inside changeFunc:" + "" + selectName);   
 		var selectBox = document.getElementById(selectName);   
 		alert ("Select found. Size:" + selectBox.options.length);  
 
@@ -80,7 +82,7 @@
    function changeFunc(selectName) 
    {
     //var selectBox = document.getElementById("styledSelect");
-	alert ("Inside changeFunc:" + selectName);   
+	alert ("Inside changeFunc:" + "" + selectName);   
 	var selectBox = document.getElementById(selectName);   
 	alert ("Select found. Size:" + selectBox.options.length);   
     var tutDesc = document.getElementById("tutorialDesc");
@@ -152,7 +154,7 @@
    function fillList() 
    {
       var result = null;
-      alert("Inside fillList()");
+      //alert("Inside fillList()");
       try {
            result = javaGetTutorialsInfoFunction();
 
@@ -180,7 +182,7 @@
 	        {
 	        	if (tutorials[j].tags.indexOf("capabilities") > -1)
 	        	{
-	        		alert("Adding the capabilities tutorial:" + tutorials[j].name);
+	        		//alert("Adding the capabilities tutorial:" + tutorials[j].name);
 	        		selectBoxc.options[selectBoxc.options.length] =new Option(tutorials[j].name, k);
 	        	}
 	          k = k + 1;
@@ -196,7 +198,7 @@
 		    {
 		    	if (tutorials[j].tags.indexOf("scenarios") > -1)
 	        	{
-			    	alert("Adding the capabilities tutorial:" + tutorials[j].name);
+			    	//alert("Adding the capabilities tutorial:" + tutorials[j].name);
 			    	selectBoxs.options[selectBoxs.options.length] =new Option(tutorials[j].name, k);
 	        	}
 			    k = k + 1;
