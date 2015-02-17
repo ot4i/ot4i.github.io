@@ -24,9 +24,12 @@
       }//catch
    };
 
-   function startTutorial() 
+   function startTutorial(selectName) 
    {
-       var selectBox = document.getElementById("styledSelect");
+       //var selectBox = document.getElementById("styledSelect");
+		alert ("Inside changeFunc:" + selectName);   
+		var selectBox = document.getElementById(selectName);   
+		alert ("Select found. Size:" + selectBox.options.length);  
 
        var tutUrl = null;
 
@@ -74,10 +77,12 @@
       }//catch
    };
 
-   function changeFunc() 
+   function changeFunc(selectName) 
    {
-    var selectBox = document.getElementById("styledSelect");
-
+    //var selectBox = document.getElementById("styledSelect");
+	alert ("Inside changeFunc:" + selectName);   
+	var selectBox = document.getElementById(selectName);   
+	alert ("Select found. Size:" + selectBox.options.length);   
     var tutDesc = document.getElementById("tutorialDesc");
 
     var selected = new Array();
@@ -111,7 +116,8 @@
             tutDesc.innerHTML = tutorials[selectBox.selectedIndex].shortDesc;
         }//if       
 
-        tutorialID  = tutorials[selectBox.selectedIndex].id;
+        tutorialName  = tutorials[selectBox.selectedIndex].name;
+        alert ("Selected tutorial name :" + tutorialName);   
      }
 
       //
@@ -120,7 +126,7 @@
       var result = null;
       try 
       {          
-        result = javaSetSelectedTutorialFunction( tutorialID );
+        result = javaSetSelectedTutorialFunction( tutorialName );
       }//try
       catch(e)
       {
