@@ -5,9 +5,9 @@
       try {
             
            result = javaGetSelectedTutorialFunction();
-           
+           alert("Importing the artifacts from : " + result);
            var tutInfoString = result[0];
-           tut           = JSON.parse( tutInfoString );
+           tut = JSON.parse( tutInfoString );
 
       }//try
       catch(e){

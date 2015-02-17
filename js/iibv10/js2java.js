@@ -8,9 +8,9 @@
    function viewDetails(selectName) {
 
        //var selectBox = document.getElementById("styledSelect");
-		alert ("Inside changeFunc:" + "" + selectName);   
+		//alert ("Inside changeFunc:" + "" + selectName);   
 		var selectBox = document.getElementById(selectName);   
-		alert ("Select found. Size:" + selectBox.options.length);  
+		//alert ("Select found. Size:" + selectBox.options.length);  
        var tutUrl = null;
 
         if (tutorials !== undefined) {
@@ -29,9 +29,9 @@
    function startTutorial(selectName) 
    {
        //var selectBox = document.getElementById("styledSelect");
-		alert ("Inside changeFunc:" + "" + selectName);   
+		//alert ("Inside changeFunc:" + "" + selectName);   
 		var selectBox = document.getElementById(selectName);   
-		alert ("Select found. Size:" + selectBox.options.length);  
+		//alert ("Select found. Size:" + selectBox.options.length);  
 
        var tutUrl = null;
 
@@ -82,9 +82,9 @@
    function changeFunc(selectName) 
    {
     //var selectBox = document.getElementById("styledSelect");
-	alert ("Inside changeFunc:" + "" + selectName);   
+	//alert ("Inside changeFunc:" + "" + selectName);   
 	var selectBox = document.getElementById(selectName);   
-	alert ("Select found. Size:" + selectBox.options.length);   
+	//alert ("Select found. Size:" + selectBox.options.length);   
     var tutDesc = document.getElementById("tutorialDesc");
 
     var selected = new Array();
@@ -119,7 +119,7 @@
         }//if       
 
         tutorialName  = tutorials[selectBox.selectedIndex].name;
-        alert ("Selected tutorial name :" + tutorialName);   
+        //alert ("Selected tutorial name :" + tutorialName);   
      }
 
       //
