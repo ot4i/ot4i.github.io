@@ -146,13 +146,14 @@
    function fillList() 
    {
       var result = null;
-
+      alert("Inside fillList()");
       try {
            result = javaGetTutorialsInfoFunction();
 
        if (result !== undefined){
           for (var i = 0; i < result.length; i++){
              var tutInfoString = result[i];
+             alert(tutInfoString);
              var tut = null;
                  tut = JSON.parse( tutInfoString );
                  tutorials.push(tut);  
@@ -164,15 +165,15 @@
       }//catch
   //add the tutorials to the select box
   //
-  var selectBox = document.getElementById("styledSelect");
-  if (selectBox )
-  {
-    var k=1;
-    for (var j = 0; j < tutorials.length; j++)
-    {
-      //alert(tutorials[j].name);
-      selectBox.options[selectBox.options.length] =new Option(tutorials[j].name, k);
-      k = k + 1;
-    }//for
-  }//if
+//  var selectBox = document.getElementById("styledSelect");
+//  if (selectBox )
+//  {
+//    var k=1;
+//    for (var j = 0; j < tutorials.length; j++)
+//    {
+//      //alert(tutorials[j].name);
+//      selectBox.options[selectBox.options.length] =new Option(tutorials[j].name, k);
+//      k = k + 1;
+//    }//for
+//  }//if
 };
