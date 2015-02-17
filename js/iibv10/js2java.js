@@ -8,7 +8,6 @@
    function viewDetails(selectName) {
 
        //var selectBox = document.getElementById("styledSelect");
-		//alert ("Inside changeFunc:" + "" + selectName);   
 		var selectBox = document.getElementById(selectName);   
 		//alert ("Select found. Size:" + selectBox.options.length);  
        var tutUrl = null;
