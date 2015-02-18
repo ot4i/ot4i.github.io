@@ -5,7 +5,7 @@
       try {
             
            result = javaGetSelectedTutorialFunction();
-          // alert("Importing the artifacts from : " + result);
+           alert("(MAIN)Importing the artifacts from : " + result);
            var tutInfoString = result[0];
            tut = JSON.parse( tutInfoString );
 
