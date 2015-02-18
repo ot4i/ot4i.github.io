@@ -160,7 +160,7 @@
        if (result !== undefined){
           for (var i = 0; i < result.length; i++){
              var tutInfoString = result[i];
-             //alert(tutInfoString);
+             alert(tutInfoString);
              var tut = null;
                  tut = JSON.parse( tutInfoString );
                  tutorials.push(tut);  
