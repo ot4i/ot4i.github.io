@@ -21,7 +21,7 @@
            result = javaViewDetailsFunction(tutUrl);
       }//try
       catch(e){
-          alert( 'a java error in viewDetails occurred: ' + e.message );
+          alert( 'a java error in javaViewDetailsFunction occurred: ' + e.message );
       }//catch
    };
 
@@ -46,7 +46,7 @@
 
       }//try
       catch(e){
-          alert( 'a java error in startTutorial occurred: ' + e.message );
+          alert( 'a java error in javaOpenTutorialStepsFunction occurred: ' + e.message );
       }//catch
    };
 
@@ -61,7 +61,7 @@
 
       }//try
       catch(e){
-          alert( 'a java error in startTutorialFromDetailsScreen occurred: ' + e.message );
+          alert( 'a java error in javaGetSelectedTutorialFunction occurred: ' + e.message );
       }//catch
 
       var tutUrl = null;
@@ -131,7 +131,7 @@
       }//try
       catch(e)
       {
-        alert( 'a java error in changeFunc occurred: ' + e.message );
+        alert( 'a java error in javaSetSelectedTutorialFunction occurred: ' + e.message );
       }//catch    
    };
 
@@ -145,7 +145,7 @@
       }//try
       catch(e)
       {
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaBackToGalleryFunction occurred: ' + e.message );
       }//catch
 
    };
@@ -160,7 +160,7 @@
        if (result !== undefined){
           for (var i = 0; i < result.length; i++){
              var tutInfoString = result[i];
-             alert(tutInfoString);
+             //alert(tutInfoString);
              var tut = null;
                  tut = JSON.parse( tutInfoString );
                  tutorials.push(tut);  
@@ -168,7 +168,7 @@
        }//if 
       }//try
       catch(e){
-          alert( 'a java error in fillList() occurred: ' + e.message );
+          alert( 'a java error in javaGetTutorialsInfoFunction occurred: ' + e.message );
       }//catch
 	  //add the tutorials to the select widget.
 	  //For now we will use predefined tags scenarios and capabilities to distribute    
