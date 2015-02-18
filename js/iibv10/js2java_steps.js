@@ -8,7 +8,7 @@
            alert("(MAIN)Importing the artifacts from : " + result);
            var tutInfoString = result[0];
            tut = JSON.parse( tutInfoString );
-
+ 
       }//try
       catch(e){
           alert( 'a java error occurred: ' + e.message );
