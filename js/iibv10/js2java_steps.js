@@ -45,7 +45,7 @@
       if (tut !== undefined){
 
         try {
-           result = javaUnDeployResourcesFunction( 'TESTNODE_demond','default', tut.appName);
+           result = javaUnDeployResourcesFunction(tut.deployedResources);
         }//try
         catch(e){
           alert( 'a java error occurred: ' + e.message );
@@ -77,7 +77,7 @@
            result = javaGetSelectedTutorialFunction();
            
            var tutInfoString = result[0];
-           tut           = JSON.parse( tutInfoString );
+           tut = JSON.parse( tutInfoString );
 
       }//try
       catch(e){
@@ -87,7 +87,7 @@
       if (tut !== undefined){
 
         try {
-           result = javaDeployBARFunction( 'TESTNODE_demond','default', tut.barFile );
+           result = javaDeployBARFunction(tut.barFile );
         }//try
         catch(e){
           alert( 'a java error occurred: ' + e.message );
