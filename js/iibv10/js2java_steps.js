@@ -5,7 +5,6 @@
       try {
             
            result = javaGetSelectedTutorialFunction();
-           alert("(MAIN)Importing the artifacts from : " + result);
            var tutInfoString = result[0];
            tut = JSON.parse( tutInfoString );
  
@@ -29,7 +28,6 @@
 
    function cleanUp() {
 
-	   alert ("inside the main js");
       var result = null;
       var tut = null;
       try {
@@ -46,17 +44,16 @@
 
       if (tut !== undefined){
 
-//        try {
-           //result = javaUnDeployResourcesFunction( 'TESTNODE_demond','default', tut.appName);
-//        }//try
-//        catch(e){
-//          alert( 'a java error occurred: ' + e.message );
-//
-//        }//catch
+        try {
+           result = javaUnDeployResourcesFunction( 'TESTNODE_demond','default', tut.appName);
+        }//try
+        catch(e){
+          alert( 'a java error occurred: ' + e.message );
+        }//catch
 
 
         try {
-           result = javaDeleteProjectsFromWorkspaceFunction( [ tut.name ,tut.projects ] );
+           result = javaDeleteProjectsFromWorkspaceFunction( tut.projects.split(":") );
         }//try
         catch(e){
           alert( 'a java error occurred: ' + e.message );
