@@ -45,7 +45,15 @@
 						"editor" : "text",
 						"wspath" : "<workspace>/Tutorial1App/iib_queues_create.mqsc"
 						}
+					],
+					"deployedResources" : 
+					[
+						{
+						"type" : "application",
+						"path" : "Tutorial1App"
+						}
 					]
+					
 				},
 				{
 					"name" : "Tutorial One",
@@ -78,6 +86,13 @@
 						"id" : "MainScript",
 						"editor" : "text",
 						"wspath" : "<workspace>/Tutorial1App/iib_queues_create.mqsc"
+						}
+					],
+					"deployedResources" : 
+					[
+						{
+						"type" : "application",
+						"path" : "Tutorial1App"
 						}
 					]
 				},
@@ -112,6 +127,13 @@
 						"id" : "MainMessage",
 						"editor" : "text",
 						"wspath" : "<workspace>/Tutorial2App/HTTPFlow_inputMessage.xml"
+						}
+					],
+					"deployedResources" : 
+					[
+						{
+						"type" : "application",
+						"path" : "Tutorial2App"
 						}
 					]
 				}
@@ -157,6 +179,13 @@
 						"editor" : "text",
 						"wspath" : "<workspace>/Tutorial1App/iib_queues_create.mqsc"
 						}
+					],
+					"deployedResources" : 
+					[
+						{
+						"type" : "application",
+						"path" : "Tutorial1App"
+						}
 					]
 				},
 				{
@@ -191,6 +220,13 @@
 						"editor" : "text",
 						"wspath" : "<workspace>/Tutorial1App/iib_queues_create.mqsc"
 						}
+					],
+					"deployedResources" : 
+					[
+						{
+						"type" : "application",
+						"path" : "Tutorial1App"
+						}
 					]
 				},
 				{
@@ -224,6 +260,13 @@
 						"id" : "MainMessage",
 						"editor" : "text",
 						"wspath" : "<workspace>/Tutorial2App/HTTPFlow_inputMessage.xml"
+						}
+					],
+					"deployedResources" : 
+					[
+						{
+						"type" : "application",
+						"path" : "Tutorial2App"
 						}
 					]
 				}
