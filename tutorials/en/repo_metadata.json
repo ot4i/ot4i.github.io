@@ -38,6 +38,7 @@
 								{
 								"type": "application",
 								"path": "TemperatureConverter"
+								}
 							]
 				},
 				{
@@ -65,6 +66,7 @@
 								{
 								"type": "application",
 								"path": "LargeMessages"
+								}
 							]
 				},
 				{
