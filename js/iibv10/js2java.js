@@ -21,7 +21,7 @@
            result = javaViewDetailsFunction(tutUrl);
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in viewDetails occurred: ' + e.message );
       }//catch
    };
 
@@ -46,7 +46,7 @@
 
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in startTutorial occurred: ' + e.message );
       }//catch
    };
 
@@ -57,11 +57,11 @@
            result = javaGetSelectedTutorialFunction();
            
            var tutInfoString = result[0];
-           tut           = JSON.parse( tutInfoString );
+           tut = JSON.parse( tutInfoString );
 
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in startTutorialFromDetailsScreen occurred: ' + e.message );
       }//catch
 
       var tutUrl = null;
@@ -74,7 +74,7 @@
 
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in startTutorialFromDetailsScreen occurred: ' + e.message );
       }//catch
    };
 
@@ -131,7 +131,7 @@
       }//try
       catch(e)
       {
-        alert( 'a java error occurred: ' + e.message );
+        alert( 'a java error in changeFunc occurred: ' + e.message );
       }//catch    
    };
 
@@ -168,7 +168,7 @@
        }//if 
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in fillList() occurred: ' + e.message );
       }//catch
 	  //add the tutorials to the select widget.
 	  //For now we will use predefined tags scenarios and capabilities to distribute    
