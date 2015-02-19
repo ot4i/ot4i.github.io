@@ -7,17 +7,17 @@
 
    function viewDetails(selectName) {
 
-	   alert ("Inside viewDetails:" + "" + selectName);   
+	   //alert ("Inside viewDetails:" + "" + selectName);   
 	   var selectBox = document.getElementById(selectName);   
 
        var tutUrl = "";
 
-		alert ("Selected index: " + selectBox.selectedIndex);
+		//alert ("Selected index: " + selectBox.selectedIndex);
        if (tutorials !== undefined && selectBox.selectedIndex != -1) {
-       	alert ("selected tutorial value " + selectBox.options[selectBox.selectedIndex].value);
+       		//alert ("selected tutorial value " + selectBox.options[selectBox.selectedIndex].value);
  	        tutUrl = tutorials[ selectBox.options[selectBox.selectedIndex].value ].detailsURL;
- 	        alert (tutUrl)
- 	        alert(tutorials[ selectBox.options[selectBox.selectedIndex].value ].name);
+ 	        //alert (tutUrl)
+ 	        //alert(tutorials[ selectBox.options[selectBox.selectedIndex].value ].name);
        }//if       
 
       var result = null;
@@ -31,18 +31,18 @@
 
    function startTutorial(selectName) 
    {
-		alert ("Inside startTutorial:" + "" + selectName);   
+		//alert ("Inside startTutorial:" + "" + selectName);   
 		var selectBox = document.getElementById(selectName);   
 		//alert ("Select found. Size:" + selectBox.options.length);  
 
        	var tutUrl = "";
-		alert ("Selected index: " + selectBox.selectedIndex);
+		//alert ("Selected index: " + selectBox.selectedIndex);
 
         if (tutorials !== undefined && selectBox.selectedIndex != -1) {
-        	alert ("selected tutorial value " + selectBox.options[selectBox.selectedIndex].value);
-        	alert (tutorials[ selectBox.options[selectBox.selectedIndex].value ].name);
+        	//alert ("selected tutorial value " + selectBox.options[selectBox.selectedIndex].value);
+        	//alert (tutorials[ selectBox.options[selectBox.selectedIndex].value ].name);
   	        tutUrl = tutorials[ selectBox.options[selectBox.selectedIndex].value ].stepsURL;
-  	        alert (tutUrl);
+  	        //alert (tutUrl);
         }//if       
 
 
@@ -91,9 +91,9 @@
 	   //reset selection
 	   try{
 		   //get the appropriate select 
-		   var selectBox = document.getElementById(selectName);
+		   var selectBox = document.getElementById(selectBox);
 		   selectBox.selectedIndex = -1;
-		   
+		   alert(selectBox + " selected index is: " + selectBox.selectedIndex);
 		   //passing the empty name should reset the selection
 		   result = javaSetSelectedTutorialFunction("");
 		   //reset the description text
@@ -109,7 +109,7 @@
    
    function changeFunc(selectName) 
    {
-	   alert ("Inside changeFunc:" + "" + selectName);  
+	   //alert ("Inside changeFunc:" + "" + selectName);  
 
 	   //get the appropriate select 
 	   var selectBox = document.getElementById(selectName);   
@@ -119,12 +119,12 @@
 
 	   //find the tutorial value
 	   var tutorialSelectValue  = selectBox.options[selectBox.selectedIndex].value;
-	 	alert ("Descriptor with the name " + "tutorialDesc_" +  selectName + " found :" + (tutorials !== undefined))
-	 	alert ("tutorialSelectValue :" + tutorialSelectValue);
+	 	//alert ("Descriptor with the name " + "tutorialDesc_" +  selectName + " found :" + (tutorials !== undefined))
+	 	//alert ("tutorialSelectValue :" + tutorialSelectValue);
 	   //set the tutorial description
 	   if (tutorials !== undefined) 
 	   {
-	   		alert ("shortDesc :" + tutorials[tutorialSelectValue].shortDesc);
+	   		//alert ("shortDesc :" + tutorials[tutorialSelectValue].shortDesc);
 		   tutDesc.innerHTML = tutorials[tutorialSelectValue].shortDesc;
 	   }     
 		
@@ -134,7 +134,7 @@
 	   var result = null;
 	   try 
 	   {          
-		   alert ("Calling a java function javaSetSelectedTutorialFunction with :" + tutorials[tutorialSelectValue].name);
+		  // alert ("Calling a java function javaSetSelectedTutorialFunction with :" + tutorials[tutorialSelectValue].name);
 		   result = javaSetSelectedTutorialFunction( tutorials[tutorialSelectValue].name );
 	   }//try
 	   catch(e)
@@ -187,7 +187,7 @@
 		  //So iterate over the given selects
     	  for (var i=0; i<Ids.length; i++)
     	  {
-    		  alert(Ids[i]);
+    		  //alert(Ids[i]);
     		  var selectBox = document.getElementById(Ids[i]);
     		  if (selectBox)
     		  {
@@ -196,7 +196,7 @@
     			  if (Ids[i].indexOf(catNameToken) > -1)
     			  {
     				  //if it is the right category add it to the option of the select
-    				  alert("Name: " + tutorials[j].name + ", value:  " + j)
+    				  //alert("Name: " + tutorials[j].name + ", value:  " + j)
     				  //use iterator j as a tutorial identifier as it will be used later to locate a tutorial in the list
     				  selectBox.options[selectBox.options.length] =new Option(tutorials[j].name, j);
     			  }
