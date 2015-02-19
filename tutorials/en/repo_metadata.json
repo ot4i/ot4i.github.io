@@ -22,7 +22,7 @@
 		            "stepsURL"      : "http://cathyyoung.github.io/ot4i.tutorials/tutorialIntegrationServices/en/steps.html",
 		            "zipURL"        : "http://cathyyoung.github.io/ot4i.tutorials/tutorialIntegrationServices/TemperatureConverter.zip",
 		            "barFile"       : "<workspace>/BARfiles/TemperatureConverter.bar",
-		            "visible"		: "false",
+		            "visible"		: "true",
 		            "tags"			: "service;http;soap;transformation",
 		            "isPattern"		: "false",
 		            "isFavorite"	: "true",
