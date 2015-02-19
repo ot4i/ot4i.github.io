@@ -7,53 +7,67 @@
 	[
 		{
 			"name":"Tool Capabilities",
-			"description":"These tutorials illustrate how to configire and use IIB tools in v10",
+			"description":"Explore Integration Bus concepts by following simple tutorials",
 			"descriptionUrl":"http://ot4i.github.io/tutorials/en/categories/Tools_Category_overview.htm",
 			"iibVersions": "",
 			"visible": "true",
 			"tutorials":
 			[
 				{
-					"name":"Integration services (SOAP/HTTP inputs)",
-					"version"	: "1.0",
-					"iibVersions"	: "10.*-11.*",
-					"shortDesc":"Learn about integration services that use SOAP/HTTP inputs in IBM Integration Bus by exploring this simple example.",
-					"detailsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial1/en/details.html",
-					"stepsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial1/en/steps.html",
-					"zipURL" : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/Tutorial1PI.zip",
-					"barFile" : "<workspace>/BARfiles/TutorialONE.bar",
-					"visible"	: true,
-					"tags"	: "mq;capabilities",
-					"isPattern"	: false,
-					"isFavorite": true,
-					"isDefault" : true,
-					"projects"	: "Tutorial1App:BARfiles",
-					"editorResPaths" : 
-					[
-						{
-						"id" : "MainFlow",
-						"editor" : "flow",
-						"wspath" : "<workspace>/Tutorial1App/bschema1/Tutorial1Flow.msgflow"
-						},
-						{
-						"id" : "MainSchema",
-						"editor" : "dfdl",
-						"wspath" : "<workspace>/Tutorial1App/taderc99.xsd"
-						},
-						{
-						"id" : "MainScript",
-						"editor" : "text",
-						"wspath" : "<workspace>/Tutorial1App/iib_queues_create.mqsc"
-						}
-					],
-					"deployedResources" : 
-					[
-						{
-						"type" : "application",
-						"path" : "Tutorial1App"
-						}
-					]
-					
+		            "name"          : "Integration services (SOAP/HTTP inputs)",
+		            "version"		: "1.0",
+		            "iibVersions"	: "10.*-11.*",
+		            "shortDesc"     : "Learn about integration services that use SOAP/HTTP inputs in IBM Integration Bus by exploring this simple example.",
+		            "detailsURL"    : "http://cathyyoung.github.io/ot4i.tutorials/tutorialIntegrationServices/en/details.html",
+		            "stepsURL"      : "http://cathyyoung.github.io/ot4i.tutorials/tutorialIntegrationServices/en/steps.html",
+		            "zipURL"        : "http://cathyyoung.github.io/ot4i.tutorials/tutorialIntegrationServices/TemperatureConverter.zip",
+		            "barFile"       : "<workspace>/BARfiles/TemperatureConverter.bar",
+		            "visible"		: "false",
+		            "tags"			: "service;http;soap;transformation",
+		            "isPattern"		: "false",
+		            "isFavorite"	: "true",
+		            "projects"		: "TemperatureConverter:BARfiles",
+		            "editorResPaths"   : [
+		            						{
+		            							"id" : "MainService",
+		            							"editor" : "integrationService",
+		            						  	"wspath" : "<workspace>/TemperatureConverter/service.descriptor"
+		            						}	
+		            					],
+					"deployedResources" : [
+								{
+								"type": "application",
+								"path": "TemperatureConverter"
+								}
+							]
+				},
+				{
+		            "name"          : "Large messaging",
+		            "version"		: "1.0",
+		            "iibVersions"	: "10.*-11.*",
+		            "shortDesc"     : "Split a large aggregate message into separate messages that can be processed individually by your system.",
+		            "detailsURL"    : "http://cathyyoung.github.io/ot4i.tutorials/tutorialLargeMessaging/en/details.html",
+		            "stepsURL"      : "http://cathyyoung.github.io/ot4i.tutorials/tutorialLargeMessaging/en/steps.html",
+		            "zipURL"        : "http://cathyyoung.github.io/ot4i.tutorials/tutorialLargeMessaging/LargeMessages.zip",
+		            "barFile"       : "<workspace>/BARfiles/LargeMessages.bar",
+		            "visible"		: "false",
+		            "tags"			: "java;transformation",
+		            "isPattern"		: "false",
+		            "isFavorite"	: "true",
+		            "projects"		: "LargeMessages:BARfiles",
+		            "editorResPaths"   : [
+		            						{
+		            							"id" : "MainFlow",
+		            							"editor" : "flow",
+		            						  	"wspath" : "<workspace>/LargeMessages/LargeMessages.msgflow"
+		            						}
+		            					],
+					"deployedResources" : [
+								{
+								"type": "application",
+								"path": "LargeMessages"
+								}
+							]
 				},
 				{
 					"name" : "Tutorial One",
@@ -63,7 +77,7 @@
 					"detailsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial1/en/details.html",
 					"stepsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial1/en/steps.html",
 					"zipURL" : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/Tutorial1PI.zip",
-					"barFile" : "<workspace>/BARfiles/TutorialONE.bar",
+					"barFile" : "<workspace>/BARfiles/tutorialONE.bar",
 					"visible"	: false,
 					"tags"	: "mq;capabilities",
 					"isPattern"	: true,
@@ -104,7 +118,7 @@
 					"detailsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial2/en/details.html",
 					"stepsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial2/en/steps.html",
 					"zipURL" : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/Tutorial2PI.zip",
-					"barFile" : "<workspace>/BARfiles/TutorialTWO.bar",
+					"barFile" : "<workspace>/BARfiles/tutorialTWO.bar",
 					"visible"	: true,
 					"tags"	: "mq;capabilities",
 					"isPattern"	: false,
@@ -141,7 +155,7 @@
 		}, 
 		{
 			"name":"Scenarios",
-			"description":"These tutorials illustrate how to use IIB to create solutions",
+			"description":"Explore powerful Integration Bus capabilities through integrated scenarios",
 			"descriptionUrl":"http://ot4i.github.io/tutorials/en/categories/Scenario_Category_overview.htm",
 			"iibVersions": "",
 			"visible": "true",
@@ -155,7 +169,7 @@
 					"detailsURL" : "http://ot4i.github.io/DFDL-JSON-GDM-tutorial/",
 					"stepsURL" : "http://ot4i.github.io/DFDL-JSON-GDM-tutorial/",
 					"zipURL" : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/Tutorial1PI.zip",
-					"barFile" : "<workspace>/BARfiles/TutorialONE.bar",
+					"barFile" : "<workspace>/BARfiles/tutorialONE.bar",
 					"visible"	: true,
 					"tags"	: "mq;scenarios",
 					"isPattern"	: false,
@@ -196,7 +210,7 @@
 					"detailsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial1/en/details.html",
 					"stepsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial1/en/steps.html",
 					"zipURL" : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/Tutorial1PI.zip",
-					"barFile" : "<workspace>/BARfiles/TutorialONE.bar",
+					"barFile" : "<workspace>/BARfiles/tutorialONE.bar",
 					"visible"	: false,
 					"tags"	: "mq;scenarios",
 					"isPattern"	: false,
@@ -237,7 +251,7 @@
 					"detailsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial2/en/details.html",
 					"stepsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial2/en/steps.html",
 					"zipURL" : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/Tutorial2PI.zip",
-					"barFile" : "<workspace>/BARfiles/TutorialTWO.bar",
+					"barFile" : "<workspace>/BARfiles/tutorialTWO.bar",
 					"visible"	: true,
 					"tags"	: "mq;scenarios",
 					"isPattern"	: true,
