@@ -91,9 +91,9 @@
 	   //reset selection
 	   try{
 		   //get the appropriate select 
-		   var selectBox = document.getElementById(selectBox);
+		   var selectBox = document.getElementById(selectName);
 		   selectBox.selectedIndex = -1;
-		   alert(selectBox + " selected index is: " + selectBox.selectedIndex);
+		   alert(selectName + " selected index is: " + selectBox.selectedIndex);
 		   //passing the empty name should reset the selection
 		   result = javaSetSelectedTutorialFunction("");
 		   //reset the description text
