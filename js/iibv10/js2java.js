@@ -7,35 +7,42 @@
 
    function viewDetails(selectName) {
 
-       //var selectBox = document.getElementById("styledSelect");
-		var selectBox = document.getElementById(selectName);   
-		//alert ("Select found. Size:" + selectBox.options.length);  
-       var tutUrl = null;
+	   //alert ("Inside viewDetails:" + "" + selectName);   
+	   var selectBox = document.getElementById(selectName);   
 
-        if (tutorials !== undefined) {
-            tutUrl = tutorials[selectBox.selectedIndex].detailsURL;
-        }//if       
+       var tutUrl = "";
+
+		//alert ("Selected index: " + selectBox.selectedIndex);
+       if (tutorials !== undefined && selectBox.selectedIndex != -1) {
+       		//alert ("selected tutorial value " + selectBox.options[selectBox.selectedIndex].value);
+ 	        tutUrl = tutorials[ selectBox.options[selectBox.selectedIndex].value ].detailsURL;
+ 	        //alert (tutUrl)
+ 	        //alert(tutorials[ selectBox.options[selectBox.selectedIndex].value ].name);
+       }//if       
 
       var result = null;
       try {
            result = javaViewDetailsFunction(tutUrl);
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaViewDetailsFunction occurred: ' + e.message );
       }//catch
    };
 
    function startTutorial(selectName) 
    {
-       //var selectBox = document.getElementById("styledSelect");
-		//alert ("Inside changeFunc:" + "" + selectName);   
+		//alert ("Inside startTutorial:" + "" + selectName);   
 		var selectBox = document.getElementById(selectName);   
 		//alert ("Select found. Size:" + selectBox.options.length);  
 
-       var tutUrl = null;
+       	var tutUrl = "";
+		//alert ("Selected index: " + selectBox.selectedIndex);
 
-        if (tutorials !== undefined) {
-            tutUrl = tutorials[selectBox.selectedIndex].stepsURL;
+        if (tutorials !== undefined && selectBox.selectedIndex != -1) {
+        	//alert ("selected tutorial value " + selectBox.options[selectBox.selectedIndex].value);
+        	//alert (tutorials[ selectBox.options[selectBox.selectedIndex].value ].name);
+  	        tutUrl = tutorials[ selectBox.options[selectBox.selectedIndex].value ].stepsURL;
+  	        //alert (tutUrl);
         }//if       
 
 
@@ -46,7 +53,7 @@
 
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaOpenTutorialStepsFunction occurred: ' + e.message );
       }//catch
    };
 
@@ -57,11 +64,11 @@
            result = javaGetSelectedTutorialFunction();
            
            var tutInfoString = result[0];
-           tut           = JSON.parse( tutInfoString );
+           tut = JSON.parse( tutInfoString );
 
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaGetSelectedTutorialFunction occurred: ' + e.message );
       }//catch
 
       var tutUrl = null;
@@ -74,65 +81,67 @@
 
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in startTutorialFromDetailsScreen occurred: ' + e.message );
       }//catch
    };
 
+   function resetSelection(selectName) 
+   {
+	   alert ("Inside resetSelection new :" + "" + selectName);  
+	   //reset selection
+	   try{
+		   //get the appropriate select 
+		   var selectBox = document.getElementById(selectName);
+		   alert(selectBox + " - select box")
+		   selectBox.selectedIndex = -1;
+		   alert(selectName + " selected index is: " + selectBox.selectedIndex);
+		   //passing the empty name should reset the selection
+		   result = javaSetSelectedTutorialFunction("");
+		   //reset the description text
+		   var tutDesc = document.getElementById("tutorialDesc_" +  selectName);
+		   alert(result[0] + "   " + result[1]);
+		   tutDesc.innerHTML = result[1];
+	   }//try
+	   catch(e)
+	   {
+		   alert( 'a java error in javaSetSelectedTutorialFunction occurred: ' + e.message );
+	   }//catch   
+   };
+   
    function changeFunc(selectName) 
    {
-    //var selectBox = document.getElementById("styledSelect");
-	//alert ("Inside changeFunc:" + "" + selectName);   
-	var selectBox = document.getElementById(selectName);   
-	//alert ("Select found. Size:" + selectBox.options.length);   
-    var tutDesc = document.getElementById("tutorialDesc");
+	   //alert ("Inside changeFunc:" + "" + selectName);  
 
-    var selected = new Array();
-     for (var i = 0; i < selectBox.options.length; i++){
-        if (selectBox.options[ i ].selected){
-         selected.push(selectBox.options[ i ].value);
-        };
-     };
+	   //get the appropriate select 
+	   var selectBox = document.getElementById(selectName);   
+	   
+	   //find the appropriate tutorial desc
+	   var tutDesc = document.getElementById("tutorialDesc_" +  selectName);
 
-     var tutorialID = "";
-
-     if ( selected.length === 0 )
-     {
-         tutDesc.innerHTML = "Please select a tutorial :)";
-         document.getElementById("viewDetails").disabled = true; 
-         document.getElementById("startTutorial").disabled = true; 
-     }
-     else if ( selected.length > 1 ) 
-     {
-         tutDesc.innerHTML = "Please select ONE tutorial :)";
-         document.getElementById("viewDetails").disabled = true; 
-         document.getElementById("startTutorial").disabled = true; 
-     }
-     else 
-     {
-         document.getElementById("viewDetails").disabled = false; 
-         document.getElementById("startTutorial").disabled = false; 
-
-        if (tutorials !== undefined) 
-        {
-            tutDesc.innerHTML = tutorials[selectBox.selectedIndex].shortDesc;
-        }//if       
-
-        tutorialName  = tutorials[selectBox.selectedIndex].name;
-        //alert ("Selected tutorial name :" + tutorialName);   
-     }
-
-      //
-      // sets the global selected tutorial value to something or null
-      //
-      var result = null;
-      try 
-      {          
-        result = javaSetSelectedTutorialFunction( tutorialName );
-      }//try
-      catch(e)
-      {
-        alert( 'a java error occurred: ' + e.message );
-      }//catch    
+	   //find the tutorial value
+	   var tutorialSelectValue  = selectBox.options[selectBox.selectedIndex].value;
+	 	//alert ("Descriptor with the name " + "tutorialDesc_" +  selectName + " found :" + (tutorials !== undefined))
+	 	//alert ("tutorialSelectValue :" + tutorialSelectValue);
+	   //set the tutorial description
+	   if (tutorials !== undefined) 
+	   {
+	   		//alert ("shortDesc :" + tutorials[tutorialSelectValue].shortDesc);
+		   tutDesc.innerHTML = tutorials[tutorialSelectValue].shortDesc;
+	   }     
+		
+	   //
+	   // sets the global selected tutorial value to something or null
+	   //
+	   var result = null;
+	   try 
+	   {          
+		  // alert ("Calling a java function javaSetSelectedTutorialFunction with :" + tutorials[tutorialSelectValue].name);
+		   result = javaSetSelectedTutorialFunction( tutorials[tutorialSelectValue].name );
+	   }//try
+	   catch(e)
+	   {
+		   alert( 'a java error in javaSetSelectedTutorialFunction occurred: ' + e.message );
+	   }//catch    
    };
 
    function backToGallery() 
@@ -145,7 +154,7 @@
       }//try
       catch(e)
       {
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaBackToGalleryFunction occurred: ' + e.message );
       }//catch
 
    };
@@ -161,47 +170,39 @@
           for (var i = 0; i < result.length; i++){
              var tutInfoString = result[i];
              //alert(tutInfoString);
-             var tut = null;
-                 tut = JSON.parse( tutInfoString );
-                 tutorials.push(tut);  
+             var tut = JSON.parse( tutInfoString );
+             tutorials.push(tut);  
           }//for 
        }//if 
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaGetTutorialsInfoFunction occurred: ' + e.message );
       }//catch
 	  //add the tutorials to the select widget.
-	  //For now we will use predefined tags scenarios and capabilities to distribute    
-	  //capabilities
-      var selectBoxc = document.getElementById("styledSelect_capabilities");
-      if (selectBoxc )
+	  var Ids = ["styledSelect_Tool_Capabilities", "styledSelect_Scenarios"];
+
+	  //loop over all the tutorials in the list
+	  for (var j = 0; j < tutorials.length; j++)
       {
-	        var k=1;
-	        for (var j = 0; j < tutorials.length; j++)
-	        {
-	        	if (tutorials[j].tags.indexOf("capabilities") > -1)
-	        	{
-	        		//alert("Adding the capabilities tutorial:" + tutorials[j].name);
-	        		selectBoxc.options[selectBoxc.options.length] =new Option(tutorials[j].name, k);
-	        	}
-	          k = k + 1;
-	        }//for
-      }//if
-            
-	  //scenarios    
-	  var selectBoxs = document.getElementById("styledSelect_scenarios");
-	  if (selectBoxs )
-	  {
-		    var k=1;
-		    for (var j = 0; j < tutorials.length; j++)
-		    {
-		    	if (tutorials[j].tags.indexOf("scenarios") > -1)
-	        	{
-			    	//alert("Adding the capabilities tutorial:" + tutorials[j].name);
-			    	selectBoxs.options[selectBoxs.options.length] =new Option(tutorials[j].name, k);
-	        	}
-			    k = k + 1;
-		    }//for
-	  }//if
-  
+		  //for each tutorial add an option to a proper select.
+		  //So iterate over the given selects
+    	  for (var i=0; i<Ids.length; i++)
+    	  {
+    		  //alert(Ids[i]);
+    		  var selectBox = document.getElementById(Ids[i]);
+    		  if (selectBox)
+    		  {
+    			  //validate that the select is the right one for the category
+    			  var catNameToken = tutorials[j].categoryName.replace(" ", "_");
+    			  if (Ids[i].indexOf(catNameToken) > -1)
+    			  {
+    				  //if it is the right category add it to the option of the select
+    				  //alert("Name: " + tutorials[j].name + ", value:  " + j)
+    				  //use iterator j as a tutorial identifier as it will be used later to locate a tutorial in the list
+    				  selectBox.options[selectBox.options.length] =new Option(tutorials[j].name, j);
+    			  }
+    		  }
+    		  
+	      }
+	  }
 };
