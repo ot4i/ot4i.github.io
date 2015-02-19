@@ -90,6 +90,10 @@
 	   alert ("Inside resetSelection:" + "" + selectName);  
 	   //reset selection
 	   try{
+		   //get the appropriate select 
+		   var selectBox = document.getElementById(selectName);
+		   selectBox.selectedIndex = -1;
+		   
 		   //passing the empty name should reset the selection
 		   result = javaSetSelectedTutorialFunction("");
 		   //reset the description text
