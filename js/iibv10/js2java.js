@@ -91,7 +91,7 @@
    function changeFunc(selectName) 
    {
     //var selectBox = document.getElementById("styledSelect");
-	//alert ("Inside changeFunc:" + "" + selectName);   
+	alert ("Inside changeFunc:" + "" + selectName);   
 	var selectBox = document.getElementById(selectName);   
 	//alert ("Select found. Size:" + selectBox.options.length);   
     var tutDesc = document.getElementById("tutorialDesc");
@@ -102,7 +102,7 @@
          selected.push(selectBox.options[ i ].value);
         };
      };
-
+     alert(selected[0]);
 
      if ( selected.length > 1 ) 
      {
@@ -116,7 +116,7 @@
          document.getElementById("viewDetails").disabled = false; 
          document.getElementById("startTutorial").disabled = false; 
 
-         alert(selected[0]);
+         
          tutorialName  = selected[0]; 
          if (tutorials !== undefined) 
          {
