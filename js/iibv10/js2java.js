@@ -7,19 +7,17 @@
 
    function viewDetails(selectName) {
 
-       //var selectBox = document.getElementById("styledSelect");
-		var selectBox = document.getElementById(selectName);   
-		//alert ("Select found. Size:" + selectBox.options.length);  
-       var tutUrl = null;
+	   alert ("Inside viewDetails:" + "" + selectName);   
+	   var selectBox = document.getElementById(selectName);   
 
-        if (tutorials !== undefined) {
-        	for (var i = 0; i < tutorials.length; i++){
-        		if (tutorials[ i ].name == selectBox.options[ i ].value){
-        			tutUrl = tutorials[ i ].detailsURL;
-        	        break;
-        	    }
-        	}
-        }//if       
+       var tutUrl = "";
+
+		alert ("Selected index: " + selectBox.selectedIndex);
+       if (tutorials !== undefined && selectBox.selectedIndex != -1) {
+       	alert ("selected tutorial value " + selectBox.options[selectBox.selectedIndex].value);
+ 	        tutUrl = tutorials[ selectBox.options[selectBox.selectedIndex].value ].detailsURL;
+ 	        alert (tutUrl)
+       }//if       
 
       var result = null;
       try {
@@ -32,20 +30,17 @@
 
    function startTutorial(selectName) 
    {
-       //var selectBox = document.getElementById("styledSelect");
-		//alert ("Inside changeFunc:" + "" + selectName);   
+		alert ("Inside startTutorial:" + "" + selectName);   
 		var selectBox = document.getElementById(selectName);   
 		//alert ("Select found. Size:" + selectBox.options.length);  
 
-       var tutUrl = null;
+       	var tutUrl = "";
+		alert ("Selected index: " + selectBox.selectedIndex);
 
-        if (tutorials !== undefined) {
-      	  for (var i = 0; i < tutorials.length; i++){
-  	        if (tutorials[ i ].name == selectBox.options[ i ].value){
-  	        	tutUrl = tutorials[ i ].stepsURL;
-  	            break;
-  	        }
-      	  }
+        if (tutorials !== undefined && selectBox.selectedIndex != -1) {
+        	alert ("selected tutorial value " + selectBox.options[selectBox.selectedIndex].value);
+  	        tutUrl = tutorials[ selectBox.options[selectBox.selectedIndex].value ].stepsURL;
+  	        alert (tutUrl)
         }//if       
 
 
@@ -88,60 +83,63 @@
       }//catch
    };
 
+   function resetSelection(selectName) 
+   {
+	   alert ("Inside resetSelection:" + "" + selectName);  
+	   //reset selection
+	   try{
+		   //passing the empty name should reset the selection
+		   result = javaSetSelectedTutorialFunction("");
+		   //reset the description text
+		   var tutDesc = document.getElementById("tutorialDesc_" +  selectName);
+		   alert(result[0] + "   " + result[1]);
+		   tutDesc.innerHTML = result[1];
+	   }//try
+	   catch(e)
+	   {
+		   alert( 'a java error in javaSetSelectedTutorialFunction occurred: ' + e.message );
+	   }//catch   
+   };
+   
    function changeFunc(selectName) 
    {
-    //var selectBox = document.getElementById("styledSelect");
-	alert ("Inside changeFunc:" + "" + selectName);   
-	var selectBox = document.getElementById(selectName);   
-	//alert ("Select found. Size:" + selectBox.options.length);   
-    var tutDesc = document.getElementById("tutorialDesc");
+	   alert ("Inside changeFunc:" + "" + selectName);  
 
-    var selected = new Array();
-     for (var i = 0; i < selectBox.options.length; i++){
-        if (selectBox.options[ i ].selected){
-         selected.push(selectBox.options[ i ].value);
-        };
-     };
-     alert(selected[0]);
+	   //get the appropriate select 
+	   var selectBox = document.getElementById(selectName);   
+	   
+	   //find the appropriate tutorial desc
+	   var tutDesc = document.getElementById("tutorialDesc_" +  selectName);
 
-     if ( selected.length > 1 ) 
-     {
-     	//TODO Enable for translation
-         tutDesc.innerHTML = "Please select only one tutorial...";
-         document.getElementById("viewDetails").disabled = true; 
-         document.getElementById("startTutorial").disabled = true; 
-     }
-     else 
-     {
-         document.getElementById("viewDetails").disabled = false; 
-         document.getElementById("startTutorial").disabled = false; 
-
-         
-         tutorialName  = selected[0]; 
-         if (tutorials !== undefined) 
-         {
-        	  for (var i = 0; i < tutorials.length; i++){
-        	        if (tutorials[ i ].name == tutorialName){
-        	            tutDesc.innerHTML = tutorials[i].shortDesc;
-        	            break;
-        	        }
-        	  }
-        }//if       
-
-     }
-
-      //
-      // sets the global selected tutorial value to something or null
-      //
-      var result = null;
-      try 
-      {          
-        result = javaSetSelectedTutorialFunction( tutorialName );
-      }//try
-      catch(e)
-      {
-        alert( 'a java error in javaSetSelectedTutorialFunction occurred: ' + e.message );
-      }//catch    
+	   //find the tutorial value
+	   var tutorialSelectValue  = "";
+	   for (var i = 0; i < selectBox.options.length; i++){
+		   if (selectBox.options[ i ].selected){
+			   tutorialSelectValue = electBox.options[ i ].value;
+	       }
+	   }
+	 	
+	 	alert ("tutorialSelectValue :" + tutorialSelectValue);
+	   //set the tutorial description
+	   if (tutorials !== undefined) 
+	   {
+	   		alert ("shortDesc :" + tutorials[tutorialSelectValue].shortDesc);
+		   tutDesc.innerHTML = tutorials[tutorialSelectValue].shortDesc;
+	   }     
+		
+	   //
+	   // sets the global selected tutorial value to something or null
+	   //
+	   var result = null;
+	   try 
+	   {          
+		   alert ("Calling a java function javaSetSelectedTutorialFunction with :" + tutorials[tutorialSelectValue].name);
+		   result = javaSetSelectedTutorialFunction( tutorials[tutorialSelectValue].name );
+	   }//try
+	   catch(e)
+	   {
+		   alert( 'a java error in javaSetSelectedTutorialFunction occurred: ' + e.message );
+	   }//catch    
    };
 
    function backToGallery() 
