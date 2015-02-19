@@ -93,17 +93,11 @@
         };
      };
 
-     var tutorialID = "";
 
-     if ( selected.length === 0 )
+     if ( selected.length > 1 ) 
      {
-         tutDesc.innerHTML = "Please select a tutorial :)";
-         document.getElementById("viewDetails").disabled = true; 
-         document.getElementById("startTutorial").disabled = true; 
-     }
-     else if ( selected.length > 1 ) 
-     {
-         tutDesc.innerHTML = "Please select ONE tutorial :)";
+     	//TODO Enable for translation
+         tutDesc.innerHTML = "Please select only one tutorial...";
          document.getElementById("viewDetails").disabled = true; 
          document.getElementById("startTutorial").disabled = true; 
      }
@@ -161,9 +155,8 @@
           for (var i = 0; i < result.length; i++){
              var tutInfoString = result[i];
              //alert(tutInfoString);
-             var tut = null;
-                 tut = JSON.parse( tutInfoString );
-                 tutorials.push(tut);  
+             var tut = JSON.parse( tutInfoString );
+             tutorials.push(tut);  
           }//for 
        }//if 
       }//try
@@ -171,37 +164,26 @@
           alert( 'a java error in javaGetTutorialsInfoFunction occurred: ' + e.message );
       }//catch
 	  //add the tutorials to the select widget.
-	  //For now we will use predefined tags scenarios and capabilities to distribute    
-	  //capabilities
-      var selectBoxc = document.getElementById("styledSelect_capabilities");
-      if (selectBoxc )
-      {
-	        var k=1;
-	        for (var j = 0; j < tutorials.length; j++)
-	        {
-	        	if (tutorials[j].tags.indexOf("capabilities") > -1)
-	        	{
-	        		//alert("Adding the capabilities tutorial:" + tutorials[j].name);
-	        		selectBoxc.options[selectBoxc.options.length] =new Option(tutorials[j].name, k);
-	        	}
-	          k = k + 1;
-	        }//for
-      }//if
-            
-	  //scenarios    
-	  var selectBoxs = document.getElementById("styledSelect_scenarios");
-	  if (selectBoxs )
+	  var Ids = ["styledSelect_Tool_Capabilities", "styledSelect_Scenarios"];
+	  for (var i=0; i<Ids.length; i++)
 	  {
-		    var k=1;
-		    for (var j = 0; j < tutorials.length; j++)
-		    {
-		    	if (tutorials[j].tags.indexOf("scenarios") > -1)
-	        	{
-			    	//alert("Adding the capabilities tutorial:" + tutorials[j].name);
-			    	selectBoxs.options[selectBoxs.options.length] =new Option(tutorials[j].name, k);
-	        	}
-			    k = k + 1;
-		    }//for
-	  }//if
-  
+		  alert(Ids[i]);
+	      var selectBoxc = document.getElementById(Ids[i]);
+	      if (selectBoxc )
+	      {
+		        var k=1;
+		        for (var j = 0; j < tutorials.length; j++)
+		        {
+		        	var catNameToken = tutorials[j].categoryName.replace(" ", "_");
+		        	alert(catNameToken);
+		        	if (Ids[i].indexOf(catNameToken) > -1)
+		        	{
+		        		alert("found match");
+		        		//alert("Adding the capabilities tutorial:" + tutorials[j].name);
+		        		selectBoxc.options[selectBoxc.options.length] =new Option(tutorials[j].name, k);
+		        	}
+		          k = k + 1;
+		        }//for
+	      }//if
+	  }
 };
