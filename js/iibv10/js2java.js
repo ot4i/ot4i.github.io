@@ -175,23 +175,29 @@
       }//catch
 	  //add the tutorials to the select widget.
 	  var Ids = ["styledSelect_Tool_Capabilities", "styledSelect_Scenarios"];
-	  for (var i=0; i<Ids.length; i++)
-	  {
-		  alert(Ids[i]);
-	      var selectBoxc = document.getElementById(Ids[i]);
-	      if (selectBoxc )
-	      {
-		        var k=1;
-		        for (var j = 0; j < tutorials.length; j++)
-		        {
-		        	var catNameToken = tutorials[j].categoryName.replace(" ", "_");
-		        	if (Ids[i].indexOf(catNameToken) > -1)
-		        	{
-		        		alert("Name: " + tutorials[j].name + ", value:  " + k)
-		        		selectBoxc.options[selectBoxc.options.length] =new Option(tutorials[j].name, k);
-		        	}
-		        	k = k + 1;
-		        }//for
-	      }//if
+
+	  //loop over all the tutorials in the list
+	  for (var j = 0; j < tutorials.length; j++)
+      {
+		  //for each tutorial add an option to a proper select.
+		  //So iterate over the given selects
+    	  for (var i=0; i<Ids.length; i++)
+    	  {
+    		  alert(Ids[i]);
+    		  var selectBox = document.getElementById(Ids[i]);
+    		  if (selectBox)
+    		  {
+    			  //validate that the select is the right one for the category
+    			  var catNameToken = tutorials[j].categoryName.replace(" ", "_");
+    			  if (Ids[i].indexOf(catNameToken) > -1)
+    			  {
+    				  //if it is the right category add it to the option of the select
+    				  alert("Name: " + tutorials[j].name + ", value:  " + j)
+    				  //use iterator j as a tutorial identifier as it will be used later to locate a tutorial in the list
+    				  selectBox.options[selectBox.options.length] =new Option(tutorials[j].name, j);
+    			  }
+    		  }
+    		  
+	      }
 	  }
 };
