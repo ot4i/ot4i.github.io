@@ -92,6 +92,7 @@
 	   try{
 		   //get the appropriate select 
 		   var selectBox = document.getElementById(selectName);
+		   alert(selectBox + " - select box")
 		   selectBox.selectedIndex = -1;
 		   alert(selectName + " selected index is: " + selectBox.selectedIndex);
 		   //passing the empty name should reset the selection
