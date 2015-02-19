@@ -13,7 +13,12 @@
        var tutUrl = null;
 
         if (tutorials !== undefined) {
-            tutUrl = tutorials[selectBox.selectedIndex].detailsURL;
+        	for (var i = 0; i < tutorials.length; i++){
+        		if (tutorials[ i ].name == selectBox.options[ i ].value){
+        			tutUrl = tutorials[ i ].detailsURL;
+        	        break;
+        	    }
+        	}
         }//if       
 
       var result = null;
@@ -35,7 +40,12 @@
        var tutUrl = null;
 
         if (tutorials !== undefined) {
-            tutUrl = tutorials[selectBox.selectedIndex].stepsURL;
+      	  for (var i = 0; i < tutorials.length; i++){
+  	        if (tutorials[ i ].name == selectBox.options[ i ].value){
+  	        	tutUrl = tutorials[ i ].stepsURL;
+  	            break;
+  	        }
+      	  }
         }//if       
 
 
@@ -106,13 +116,17 @@
          document.getElementById("viewDetails").disabled = false; 
          document.getElementById("startTutorial").disabled = false; 
 
-        if (tutorials !== undefined) 
-        {
-            tutDesc.innerHTML = tutorials[selectBox.selectedIndex].shortDesc;
+         tutorialName  = selected[0]; 
+         if (tutorials !== undefined) 
+         {
+        	  for (var i = 0; i < tutorials.length; i++){
+        	        if (tutorials[ i ].name == tutorialName){
+        	            tutDesc.innerHTML = tutorials[i].shortDesc;
+        	            break;
+        	        }
+        	  }
         }//if       
 
-        tutorialName  = tutorials[selectBox.selectedIndex].name;
-        //alert ("Selected tutorial name :" + tutorialName);   
      }
 
       //
@@ -175,11 +189,8 @@
 		        for (var j = 0; j < tutorials.length; j++)
 		        {
 		        	var catNameToken = tutorials[j].categoryName.replace(" ", "_");
-		        	alert(catNameToken);
 		        	if (Ids[i].indexOf(catNameToken) > -1)
 		        	{
-		        		alert("found match");
-		        		//alert("Adding the capabilities tutorial:" + tutorials[j].name);
 		        		selectBoxc.options[selectBoxc.options.length] =new Option(tutorials[j].name, k);
 		        	}
 		          k = k + 1;
