@@ -17,6 +17,7 @@
        	alert ("selected tutorial value " + selectBox.options[selectBox.selectedIndex].value);
  	        tutUrl = tutorials[ selectBox.options[selectBox.selectedIndex].value ].detailsURL;
  	        alert (tutUrl)
+ 	        alert(tutorials[ selectBox.options[selectBox.selectedIndex].value ].name);
        }//if       
 
       var result = null;
@@ -39,8 +40,9 @@
 
         if (tutorials !== undefined && selectBox.selectedIndex != -1) {
         	alert ("selected tutorial value " + selectBox.options[selectBox.selectedIndex].value);
+        	alert (tutorials[ selectBox.options[selectBox.selectedIndex].value ].name);
   	        tutUrl = tutorials[ selectBox.options[selectBox.selectedIndex].value ].stepsURL;
-  	        alert (tutUrl)
+  	        alert (tutUrl);
         }//if       
 
 
@@ -112,13 +114,8 @@
 	   var tutDesc = document.getElementById("tutorialDesc_" +  selectName);
 
 	   //find the tutorial value
-	   var tutorialSelectValue  = "";
-	   for (var i = 0; i < selectBox.options.length; i++){
-		   if (selectBox.options[ i ].selected){
-			   tutorialSelectValue = electBox.options[ i ].value;
-	       }
-	   }
-	 	
+	   var tutorialSelectValue  = selectBox.options[selectBox.selectedIndex].value;
+	 	alert ("Descriptor with the name " + "tutorialDesc_" +  selectName + " found :" + (tutorials !== undefined))
 	 	alert ("tutorialSelectValue :" + tutorialSelectValue);
 	   //set the tutorial description
 	   if (tutorials !== undefined) 
@@ -190,9 +187,10 @@
 		        	var catNameToken = tutorials[j].categoryName.replace(" ", "_");
 		        	if (Ids[i].indexOf(catNameToken) > -1)
 		        	{
+		        		alert("Name: " + tutorials[j].name + ", value:  " + k)
 		        		selectBoxc.options[selectBoxc.options.length] =new Option(tutorials[j].name, k);
 		        	}
-		          k = k + 1;
+		        	k = k + 1;
 		        }//for
 	      }//if
 	  }
