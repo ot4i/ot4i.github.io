@@ -116,6 +116,7 @@
          document.getElementById("viewDetails").disabled = false; 
          document.getElementById("startTutorial").disabled = false; 
 
+         alert(selected[0]);
          tutorialName  = selected[0]; 
          if (tutorials !== undefined) 
          {
