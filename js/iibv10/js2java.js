@@ -6,7 +6,6 @@
    var tutorials = [];
 
    function viewDetails(selectName) {
-
 	   //alert ("Inside viewDetails:" + "" + selectName);   
 	   var selectBox = document.getElementById(selectName);   
 
