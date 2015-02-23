@@ -82,7 +82,7 @@
                   </p>
                   <div>
                     
-                    <select size="10" id="styledSelect_Tool_Capabilities" name="tutorials" onchange="changeFunc('styledSelect_Tool_Capabilities');">
+                    <select size="10" id="styledSelect_Tool_Capabilities" name="tutorials" onchange="resetSelection('styledSelect_Scenarios');changeFunc('styledSelect_Tool_Capabilities');">
                     
                       
                         <!--option selected="true">Integration services (SOAP/HTTP inputs) </option>
@@ -179,7 +179,7 @@
                 </p>
                 <div>
                   
-                  <select size="10" id="styledSelect_Scenarios" name="tutorials" onchange="changeFunc('styledSelect_Scenarios');">
+                  <select size="10" id="styledSelect_Scenarios" name="tutorials" onchange="resetSelection('styledSelect_Tool_Capabilities');changeFunc('styledSelect_Scenarios');">
                   
                     
                       <!--option>GDM Mapper with VCard data </option>
