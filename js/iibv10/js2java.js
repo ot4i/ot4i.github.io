@@ -159,6 +159,23 @@
 
    function fillList() 
    {
+	   var selectedTutorialName = null;
+	   //check for the selected tutorial that may be set before the view was closed
+      try 
+      {
+		   result = javaGetSelectedTutorialFunction();
+		   
+		   if (result !== undefined)
+		   {
+		       var tutInfoString = result[0];
+		       selectedTutorialName = JSON.parse( tutInfoString ).name;
+		       alert ("Selected option found: " + selectedTutorialName)
+		   }
+      }
+	  catch(e)
+	  {
+		  alert( 'a java error in javaGetSelectedTutorialFunction occurred: ' + e.message );
+	  }//catch
       var result = null;
       //alert("Inside fillList()");
       try {
@@ -198,6 +215,11 @@
     				  //alert("Name: " + tutorials[j].name + ", value:  " + j)
     				  //use iterator j as a tutorial identifier as it will be used later to locate a tutorial in the list
     				  selectBox.options[selectBox.options.length] =new Option(tutorials[j].name, j);
+    				  if (selectedTutorialName != undefined && tutorials[j].name == selectedTutorialName)
+    				  {
+    					  alert ("Selected option found: " + selectedTutorialName)
+    					  selectBox.options[selectBox.options.length].setAttribute("selected", "selected");
+    				  }
     			  }
     		  }
     		  
