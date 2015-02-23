@@ -215,12 +215,10 @@
     				  //if it is the right category add it to the option of the select
     				  //alert("Name: " + tutorials[j].name + ", value:  " + j)
     				  //use iterator j as a tutorial identifier as it will be used later to locate a tutorial in the list
-    				  selectBox.options[selectBox.options.length] =new Option(tutorials[j].name, j);
-    				  if (selectedTutorialName != undefined && tutorials[j].name == selectedTutorialName)
-    				  {
-    					  alert ("Selected option found: " + selectedTutorialName)
-    					  selectBox.options[selectBox.options.length].setAttribute("selected", "selected");
-    				  }
+    				  if (selectedTutorialName && tutorials[j].name == selectedTutorialName)
+    					  selectBox.options[selectBox.options.length] =new Option(tutorials[j].name, j, false, true);
+    				  else
+    					  selectBox.options[selectBox.options.length] =new Option(tutorials[j].name, j);
     			  }
     		  }
     		  
