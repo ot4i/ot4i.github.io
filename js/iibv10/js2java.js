@@ -87,7 +87,7 @@
 
    function resetSelection(selectName) 
    {
-	   alert ("Inside resetSelection new :" + "" + selectName);  
+	   //alert ("Inside resetSelection new :" + "" + selectName);  
 	   //reset selection
 	   try{
 		   //get the appropriate select 
