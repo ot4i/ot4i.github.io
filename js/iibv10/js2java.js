@@ -165,12 +165,12 @@
       {
 		   result = javaGetSelectedTutorialFunction();
 		   
-		   alert (result[0] + "   " + result[0].length);
+		   //alert (result[0] + "   " + result[0].length);
 		   if (result[0].length > 0)
 		   {
 		       var tutInfoString = result[0];
 		       selectedTutorialName = JSON.parse( tutInfoString ).name;
-		       alert ("Selected option found: " + selectedTutorialName)
+		      // alert ("Selected option found: " + selectedTutorialName)
 		   }
       }
 	  catch(e)
