@@ -17,7 +17,6 @@
        		//alert ("selected tutorial value " + selectBox.options[selectBox.selectedIndex].value);
  	        tutUrl = tutorials[ selectBox.options[selectBox.selectedIndex].value ].detailsURL;
  	        //alert (tutUrl)
- 	        //alert(tutorials[ selectBox.options[selectBox.selectedIndex].value ].name);
        }//if       
 
       var result = null;
