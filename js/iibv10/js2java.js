@@ -165,7 +165,8 @@
       {
 		   result = javaGetSelectedTutorialFunction();
 		   
-		   if (result !== undefined && result[0].length > 0)
+		   alert (result[0] + "   " + result[0].length);
+		   if (result[0].length > 0)
 		   {
 		       var tutInfoString = result[0];
 		       selectedTutorialName = JSON.parse( tutInfoString ).name;
