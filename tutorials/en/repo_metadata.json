@@ -21,22 +21,22 @@
 		            "detailsURL"    : "http://cathyyoung.github.io/ot4i.tutorials/tutorialIntegrationServices/en/details.html",
 		            "stepsURL"      : "http://cathyyoung.github.io/ot4i.tutorials/tutorialIntegrationServices/en/steps.html",
 		            "zipURL"        : "http://cathyyoung.github.io/ot4i.tutorials/tutorialIntegrationServices/TemperatureConverter.zip",
-		            "barFile"       : "<workspace>/BARfiles/TemperatureConverter.bar",
+		            "barFile"       : "<workspace>/TemperatureConverter/TemperatureConverterproject.generated.bar",
 		            "visible"		: "true",
 		            "tags"			: "service;http;soap;transformation",
 		            "isPattern"		: "false",
 		            "isFavorite"	: "true",
-		            "projects"		: "TemperatureConverter:BARfiles",
+		            "projects"		: "TemperatureConverter",
 		            "editorResPaths"   : [
 		            						{
 		            							"id" : "MainService",
-		            							"editor" : "integrationService",
+		            							"editor" : "service",
 		            						  	"wspath" : "<workspace>/TemperatureConverter/service.descriptor"
 		            						}	
 		            					],
 					"deployedResources" : [
 								{
-								"type": "application",
+								"type": "service",
 								"path": "TemperatureConverter"
 								}
 							]
@@ -49,12 +49,12 @@
 		            "detailsURL"    : "http://cathyyoung.github.io/ot4i.tutorials/tutorialLargeMessaging/en/details.html",
 		            "stepsURL"      : "http://cathyyoung.github.io/ot4i.tutorials/tutorialLargeMessaging/en/steps.html",
 		            "zipURL"        : "http://cathyyoung.github.io/ot4i.tutorials/tutorialLargeMessaging/LargeMessages.zip",
-		            "barFile"       : "<workspace>/BARfiles/LargeMessages.bar",
+		            "barFile"       : "<workspace>/LargeMessages/LargeMessagesproject.generated.bar",
 		            "visible"		: "true",
 		            "tags"			: "java;transformation",
 		            "isPattern"		: "false",
 		            "isFavorite"	: "true",
-		            "projects"		: "LargeMessages:BARfiles",
+		            "projects"		: "LargeMessages:LargeMessagesJava",
 		            "editorResPaths"   : [
 		            						{
 		            							"id" : "MainFlow",
