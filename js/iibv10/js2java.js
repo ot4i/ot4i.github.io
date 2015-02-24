@@ -6,7 +6,6 @@
    var tutorials = [];
 
    function viewDetails(selectName) {
-
 	   //alert ("Inside viewDetails:" + "" + selectName);   
 	   var selectBox = document.getElementById(selectName);   
 
@@ -17,7 +16,6 @@
        		//alert ("selected tutorial value " + selectBox.options[selectBox.selectedIndex].value);
  	        tutUrl = tutorials[ selectBox.options[selectBox.selectedIndex].value ].detailsURL;
  	        //alert (tutUrl)
- 	        //alert(tutorials[ selectBox.options[selectBox.selectedIndex].value ].name);
        }//if       
 
       var result = null;
@@ -87,19 +85,19 @@
 
    function resetSelection(selectName) 
    {
-	   alert ("Inside resetSelection new :" + "" + selectName);  
+	   //alert ("Inside resetSelection new :" + "" + selectName);  
 	   //reset selection
 	   try{
 		   //get the appropriate select 
 		   var selectBox = document.getElementById(selectName);
-		   alert(selectBox + " - select box")
+		   //alert(selectBox + " - select box")
 		   selectBox.selectedIndex = -1;
-		   alert(selectName + " selected index is: " + selectBox.selectedIndex);
+		   //alert(selectName + " selected index is: " + selectBox.selectedIndex);
 		   //passing the empty name should reset the selection
 		   result = javaSetSelectedTutorialFunction("");
 		   //reset the description text
 		   var tutDesc = document.getElementById("tutorialDesc_" +  selectName);
-		   alert(result[0] + "   " + result[1]);
+		   //alert(result[0] + "   " + result[1]);
 		   tutDesc.innerHTML = result[1];
 	   }//try
 	   catch(e)
@@ -161,6 +159,24 @@
 
    function fillList() 
    {
+	   var selectedTutorialName = null;
+	   //check for the selected tutorial that may be set before the view was closed
+      try 
+      {
+		   result = javaGetSelectedTutorialFunction();
+		   
+		   //alert (result[0] + "   " + result[0].length);
+		   if (result[0].length > 0)
+		   {
+		       var tutInfoString = result[0];
+		       selectedTutorialName = JSON.parse( tutInfoString ).name;
+		      // alert ("Selected option found: " + selectedTutorialName)
+		   }
+      }
+	  catch(e)
+	  {
+		  alert( 'a java error in javaGetSelectedTutorialFunction occurred: ' + e.message );
+	  }//catch
       var result = null;
       //alert("Inside fillList()");
       try {
@@ -199,7 +215,10 @@
     				  //if it is the right category add it to the option of the select
     				  //alert("Name: " + tutorials[j].name + ", value:  " + j)
     				  //use iterator j as a tutorial identifier as it will be used later to locate a tutorial in the list
-    				  selectBox.options[selectBox.options.length] =new Option(tutorials[j].name, j);
+    				  if (selectedTutorialName && tutorials[j].name == selectedTutorialName)
+    					  selectBox.options[selectBox.options.length] =new Option(tutorials[j].name, j, false, true);
+    				  else
+    					  selectBox.options[selectBox.options.length] =new Option(tutorials[j].name, j);
     			  }
     		  }
     		  

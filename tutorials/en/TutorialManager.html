@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-
 <html class="no-js" lang="en">
  
 	
@@ -69,10 +67,10 @@
             <div class="large-10 medium-10 small-10 columns">
 
               <ul class="tabs" data-tab> 
-                <li class="tab-title tab-title-big active" onclick="resetSelection('styledSelect_Tool_Capabilities');">
+                <li class="tab-title tab-title-big active"> <!-- onclick="resetSelection('styledSelect_Tool_Capabilities');"-->
                   <a href="#panel11">Tool Capabilities</a>
                 </li>
-                <li class="tab-title tab-title-big" onclick="resetSelection('styledSelect_Scenarios');">
+                <li class="tab-title tab-title-big"> <!--onclick="resetSelection('styledSelect_Scenarios');"-->
                   <a href="#panel21">Scenarios</a>
                 </li>
               </ul>
@@ -84,7 +82,7 @@
                   </p>
                   <div>
                     
-                    <select size="10" id="styledSelect_Tool_Capabilities" name="tutorials" onchange="changeFunc('styledSelect_Tool_Capabilities');">
+                    <select size="10" id="styledSelect_Tool_Capabilities" name="tutorials" onchange="resetSelection('styledSelect_Scenarios');changeFunc('styledSelect_Tool_Capabilities');">
                     
                       
                         <!--option selected="true">Integration services (SOAP/HTTP inputs) </option>
@@ -181,7 +179,7 @@
                 </p>
                 <div>
                   
-                  <select size="10" id="styledSelect_Scenarios" name="tutorials" onchange="changeFunc('styledSelect_Scenarios');">
+                  <select size="10" id="styledSelect_Scenarios" name="tutorials" onchange="resetSelection('styledSelect_Tool_Capabilities');changeFunc('styledSelect_Scenarios');">
                   
                     
                       <!--option>GDM Mapper with VCard data </option>
