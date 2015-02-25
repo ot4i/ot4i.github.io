@@ -29,7 +29,7 @@
             "id" : "com.ibm.etools.mft.SolarPatternAuthoring.pattern",
             "name": "Solar",
             "category_id": "categories.Id128060cd5424813434183055e99",
-            "doc_url": "http://ot4i.github.io/patterns/solar/overview.htm",
+            "doc_url": "http://ot4i.github.io/solar-pattern/en/overview.htm",
             "ibm_supported": false,
 
 
