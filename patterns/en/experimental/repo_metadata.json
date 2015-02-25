@@ -76,7 +76,7 @@
             "id" : "com.ibm.etools.mft.pattern.fp.rd.httponeway",
             "name": "HTTP one-way",
             "category_id": "com.ibm.etools.mft.pattern.fp.rd",
-            "doc_url": "http://ot4i.github.io/file-http-pattern/pattern/overview.htm",
+            "doc_url": "http://ot4i.github.io/file-http-pattern/pattern/en/overview.htm",
             "ibm_supported": false,
 
 
