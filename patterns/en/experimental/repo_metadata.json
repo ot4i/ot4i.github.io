@@ -11,27 +11,27 @@
             "id": "categories.Id137f11207e577a6cd936f6b8717",
             "name": "Mobile",
             "parent_category_id": "com.ibm.etools.pattern",
-            "doc_url": "http://ot4i.github.io/patterns/categories/Id137f11207e577a6cd936f6b8717/overview.htm"
+            "doc_url": "http://ot4i.github.io/patterns/en/categories/Id137f11207e577a6cd936f6b8717/overview.htm"
         },
 
         {
             "id": "categories.Id13e1237d9d5444112c7f0ad8e88",
             "name": "MessageSight",
             "parent_category_id": "categories.Id137f11207e577a6cd936f6b8717",
-            "doc_url": "http://ot4i.github.io/patterns/categories/Id13e1237d9d5444112c7f0ad8e88/overview.htm"
+            "doc_url": "http://ot4i.github.io/patterns/en/categories/Id13e1237d9d5444112c7f0ad8e88/overview.htm"
         }
         ,
         {
             "id": "com.ibm.etools.mft.pattern.fp",
             "name": "File Processing",
             "parent_category_id": "com.ibm.etools.pattern",
-            "doc_url": "http://ot4i.github.io/patterns/categories/com.ibm.etools.mft.pattern.fp/wmb_patterns_fp.htm"
+            "doc_url": "http://ot4i.github.io/patterns/en/categories/com.ibm.etools.mft.pattern.fp/wmb_patterns_fp.htm"
         },
         {
             "id": "com.ibm.etools.mft.pattern.fp.rd",
             "name": "Record Distribution",
             "parent_category_id": "com.ibm.etools.mft.pattern.fp",
-            "doc_url": "http://ot4i.github.io/patterns/categories/com.ibm.etools.mft.pattern.fp.rd/overview.htm"
+            "doc_url": "http://ot4i.github.io/patterns/en/categories/com.ibm.etools.mft.pattern.fp.rd/overview.htm"
         }
 
 
