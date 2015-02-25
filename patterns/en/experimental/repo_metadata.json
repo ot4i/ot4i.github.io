@@ -49,7 +49,7 @@
             "id" : "com.ibm.etools.mft.pattern.messaging.eventfilter",
             "name": "Event Filter",
             "category_id": "categories.Id13e1237d9d5444112c7f0ad8e88",
-            "doc_url": "http://ot4i.github.io/event-filter-pattern/pattern/overview.htm",
+            "doc_url": "http://ot4i.github.io/event-filter-pattern/pattern/en/overview.htm",
             "ibm_supported": false,
 
 
