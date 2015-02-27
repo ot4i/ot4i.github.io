@@ -74,7 +74,7 @@
 					"version"	: "",
 					"iibVersions"	: "10.*-11.*",
 					"shortDesc" : "This is a short description of Tutorial One! :)",
-					"detailsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial1/en/details.html",
+					"detailsURL" : "http://whichbrowser.net/",
 					"stepsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial1/en/steps.html",
 					"zipURL" : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/Tutorial1PI.zip",
 					"barFile" : "<workspace>/BARfiles/TutorialONE.bar",
