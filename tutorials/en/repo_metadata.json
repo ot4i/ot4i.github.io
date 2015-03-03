@@ -14,109 +14,105 @@
 			"tutorials":
 			[
 				{
-		            "name"          : "Integration services (SOAP/HTTP inputs)",
-		            "version"		: "1.0",
-		            "iibVersions"	: "10.*-11.*",
-		            "shortDesc"     : "Learn about integration services that use SOAP/HTTP inputs in IBM Integration Bus by exploring this simple example.",
-		            "detailsURL"    : "http://cathyyoung.github.io/ot4i.tutorials/tutorialIntegrationServices/en/details.html",
-		            "stepsURL"      : "http://cathyyoung.github.io/ot4i.tutorials/tutorialIntegrationServices/en/steps.html",
-		            "zipURL"        : "http://cathyyoung.github.io/ot4i.tutorials/tutorialIntegrationServices/TemperatureConverter.zip",
-		            "barFile"       : "<workspace>/BARfiles/TemperatureConverter.bar",
-		            "visible"		: "true",
-		            "tags"			: "service;http;soap;transformation",
-		            "isPattern"		: "false",
-		            "isFavorite"	: "true",
-		            "projects"		: "TemperatureConverter:BARfiles",
-		            "editorResPaths"   : [
-		            						{
-		            							"id" : "MainService",
-		            							"editor" : "service",
-		            						  	"wspath" : "<workspace>/TemperatureConverter/service.descriptor"
-		            						}	
-		            					],
-					"deployedResources" : [
-								{
-								"type": "service",
-								"path": "TemperatureConverter"
-								}
+		        	"name"          : "Integration services (SOAP/HTTP inputs)",
+		            	"version"		: "1.0",
+		            	"iibVersions"	: "10.*-11.*",
+		            	"shortDesc"     : "Learn about integration services that use SOAP/HTTP inputs in IBM Integration Bus by exploring this simple example.",
+		            	"detailsURL"    : "http://ot4i.github.io/ot4i.tutorials/tutorialIntegrationServices/en/details.html",
+		            	"stepsURL"      : "http://ot4i.github.io/ot4i.tutorials/tutorialIntegrationServices/en/steps.html",
+		            	"zipURL"        : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/TemperatureConverter.zip",
+		            	"barFile"       : "<workspace>/BARfiles/TemperatureConverter.bar",
+		            	"visible"	: "true",
+		            	"tags"		: "service;http;soap;transformation",
+		            	"isPattern"	: "false",
+		            	"isFavorite"	: "true",
+		            	"projects"		: "TemperatureConverter:BARfiles",
+		            	"editorResPaths"   : [
+		            				{
+		            				"id" : "MainService",
+		            				"editor" : "service",
+		            				"wspath" : "<workspace>/TemperatureConverter/service.descriptor"
+		            				}	
+		            				],
+			    	"deployedResources" : [
+							{
+							"type": "service",
+							"path": "TemperatureConverter"
+							}
 							]
 				},
 				{
-		            "name"          : "Large messaging",
-		            "version"		: "1.0",
-		            "iibVersions"	: "10.*-11.*",
-		            "shortDesc"     : "Split a large aggregate message into separate messages that can be processed individually by your system.",
-		            "detailsURL"    : "http://cathyyoung.github.io/ot4i.tutorials/tutorialLargeMessaging/en/details.html",
-		            "stepsURL"      : "http://cathyyoung.github.io/ot4i.tutorials/tutorialLargeMessaging/en/steps.html",
-		            "zipURL"        : "http://cathyyoung.github.io/ot4i.tutorials/tutorialLargeMessaging/LargeMessages.zip",
-		            "barFile"       : "<workspace>/BARfiles/LargeMessages.bar",
-		            "visible"		: "true",
-		            "tags"			: "java;transformation",
-		            "isPattern"		: "false",
-		            "isFavorite"	: "true",
-		            "projects"		: "LargeMessages:LargeMessagesJava:BARfiles",
-		            "editorResPaths"   : [
-		            						{
-		            							"id" : "MainFlow",
-		            							"editor" : "flow",
-		            						  	"wspath" : "<workspace>/LargeMessages/LargeMessages.msgflow"
-		            						}
-		            					],
-					"deployedResources" : [
-								{
-								"type": "application",
-								"path": "LargeMessages"
-								}
-							]
+		            	"name"          : "Large messaging",
+		            	"version"		: "1.0",
+		            	"iibVersions"	: "10.*-11.*",
+		            	"shortDesc"     : "Split a large aggregate message into separate messages that can be processed individually by your system.",
+		            	"detailsURL"    : "http://ot4i.github.io/ot4i.tutorials/tutorialLargeMessaging/en/details.html",
+		            	"stepsURL"      : "http://ot4i.github.io/ot4i.tutorials/tutorialLargeMessaging/en/steps.html",
+		            	"zipURL"        : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/LargeMessages.zip",
+		            	"barFile"       : "<workspace>/BARfiles/LargeMessages.bar",
+		            	"visible"	: "true",
+		            	"tags"		: "java;transformation",
+		            	"isPattern"	: "false",
+		            	"isFavorite"	: "true",
+		            	"projects"	: "LargeMessages:LargeMessagesJava:BARfiles",
+		            	"editorResPaths"   : [
+		            				{
+		            				"id" : "MainFlow",
+		            				"editor" : "flow",
+		            			  	"wspath" : "<workspace>/LargeMessages/LargeMessages.msgflow"
+		            				}
+		            			],
+				"deployedResources" : [
+							{
+							"type": "application",
+							"path": "LargeMessages"
+							}
+						]
 				},
 				{
-		            "name"          : "HTTP Input to drive a message flow",
-		            "version"		: "1.0",
-		            "iibVersions"	: "10.*-11.*",
-		            "shortDesc"     : "Learn how to use an HTTP Input node to parse JSON data in an IBM Integration Bus message flow by exploring this simple example.",
-		            "detailsURL"    : "http://cathyyoung.github.io/ot4i.tutorials/tutorialHTTPInputApplication/en/details.html",
-		            "stepsURL"      : "http://cathyyoung.github.io/ot4i.tutorials/tutorialHTTPInputApplication/en/steps.html",
-		            "zipURL"        : "http://cathyyoung.github.io/ot4i.tutorials/tutorialHTTPInputApplication/PI_HTTPInputApplication.zip",
-		            "barFile"       : "<workspace>/HTTPInputApplication/HTTPInputApplication.bar",
-		            "visible"		: "true",
-		            "tags"			: "HTTP;transformation",
-		            "isPattern"		: "false",
-		            "isFavorite"	: "true",
-		            "durationText":"This tutorial takes approximately",
-		            "durationTime":"5 minutes",
-		            "resourceToOpen":"MainFlow",
-		            "projects"		: "HTTPInputApplication",
-		            "editorResPaths"   : [
-		            						{
-		            							"id" : "MainFlow",
-		            							"editor" : "flow",
-		            						  	"wspath" : "<workspace>/HTTPInputApplication/HTTPInputMessageFlow.msgflow"
-		            						}
-		            					],
-					"deployedResources" : [
-								{
-								"type": "application",
-								"path": "HTTPInputApplication"
-								}
-							]
+		        	"name"          : "HTTP Input to drive a message flow",
+		            	"version"	: "1.0",
+		            	"iibVersions"	: "10.*-11.*",
+		            	"shortDesc"     : "Learn how to use an HTTP Input node to parse JSON data in an IBM Integration Bus message flow by exploring this simple example.",
+		            	"detailsURL"    : "http:///ot4i.github.io/ot4i.tutorials/tutorialHTTPInputApplication/en/details.html",
+		            	"stepsURL"      : "http:///ot4i.github.io/ot4i.tutorials/tutorialHTTPInputApplication/en/steps.html",
+		            	"zipURL"        : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/PI_HTTPInputApplication.zip",
+		            	"barFile"       : "<workspace>/HTTPInputApplication/HTTPInputApplication.bar",
+		            	"visible"	: "true",
+		            	"tags"		: "HTTP;transformation",
+		            	"isPattern"	: "false",
+		            	"isFavorite"	: "true",
+		            	"projects"	: "HTTPInputApplication",
+		        	 "editorResPaths"   : [
+		            				{
+		            				"id" : "MainFlow",
+		            				"editor" : "flow",
+		            			  	"wspath" : "<workspace>/HTTPInputApplication/HTTPInputMessageFlow.msgflow"
+		            			}
+		            		],
+				"deployedResources" : [
+							{
+							"type": "application",
+							"path": "HTTPInputApplication"
+							}
+						]
 				},
 				{
-					"name" : "Tutorial One",
-					"version"	: "",
-					"iibVersions"	: "10.*-11.*",
-					"shortDesc" : "This is a short description of Tutorial One! :)",
-					"detailsURL" : "http://whichbrowser.net/",
-					"stepsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial1/en/steps.html",
-					"zipURL" : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/Tutorial1PI.zip",
-					"barFile" : "<workspace>/BARfiles/TutorialONE.bar",
-					"visible"	: "true",
-					"tags"	: "mq;capabilities",
-					"isPattern"	: "true",
-					"isFavorite": "true",
-					"isDefault" : "false",
-					"projects"	: "Tutorial1App:BARfiles",
-					"editorResPaths" : 
-					[
+				"name" : "Tutorial One (TO REMOVE BY GA)",
+				"version"	: "",
+				"iibVersions"	: "10.*-11.*",
+				"shortDesc" 	: "This is a short description of Tutorial One! :)",
+				"detailsURL" 	: "http://whichbrowser.net/",
+				"stepsURL" 	: "http://ot4i.github.io/ot4i.tutorials/tutorial1/en/steps.html",
+				"zipURL" 	: "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/Tutorial1PI.zip",
+				"barFile" 	: "<workspace>/BARfiles/TutorialONE.bar",
+				"visible"	: "true",
+				"tags"		: "mq;capabilities",
+				"isPattern"	: "true",
+				"isFavorite"	: "true",
+				"isDefault" 	: "false",
+				"projects"	: "Tutorial1App:BARfiles",
+				"editorResPaths": [
 						{
 						"id" : "MainFlow",
 						"editor" : "flow",
@@ -133,52 +129,10 @@
 						"wspath" : "<workspace>/Tutorial1App/iib_queues_create.mqsc"
 						}
 					],
-					"deployedResources" : 
-					[
+				"deployedResources" :[
 						{
 						"type" : "application",
 						"path" : "Tutorial1App"
-						}
-					]
-				},
-				{
-					"name" : "Tutorial Two",
-					"version"	: "",
-					"iibVersions"	: "10.*-11.*",
-					"shortDesc" : "This is a short description of Tutorial Two! :)",
-					"detailsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial2/en/details.html",
-					"stepsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial2/en/steps.html",
-					"zipURL" : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/Tutorial2PI.zip",
-					"barFile" : "<workspace>/BARfiles/TutorialTWO.bar",
-					"visible"	: "true",
-					"tags"	: "mq;capabilities",
-					"isPattern"	: "false",
-					"isFavorite": "true",
-					"isDefault" : "false",
-					"projects"	: "Tutorial2App:BARfiles",
-					"editorResPaths" : 
-					[
-						{
-						"id" : "MainFlow",
-						"editor" : "flow",
-						"wspath" : "<workspace>/Tutorial2App/Tutorial2Flow.msgflow"
-						},
-						{
-						"id" : "MainEsql",
-						"editor" : "",
-						"wspath" : "<workspace>/Tutorial2App/HTTPFlow_Compute.esql"
-						},
-						{
-						"id" : "MainMessage",
-						"editor" : "text",
-						"wspath" : "<workspace>/Tutorial2App/HTTPFlow_inputMessage.xml"
-						}
-					],
-					"deployedResources" : 
-					[
-						{
-						"type" : "application",
-						"path" : "Tutorial2App"
 						}
 					]
 				}
@@ -193,12 +147,12 @@
 			"tutorials":
 			[
 				{
-					"name" : "GDM Mapper with VCard data",
+					"name" : "GDM Mapper with VCard data (TO UPDATE BY GA)",
 					"version"	: "1.0",
 					"iibVersions"	: "10.*-11.*",
-					"shortDesc" : "This is a short description of Tutorial One! :)",
-					"detailsURL" : "http://ot4i.github.io/DFDL-JSON-GDM-tutorial/",
-					"stepsURL" : "http://ot4i.github.io/DFDL-JSON-GDM-tutorial/",
+					"shortDesc" : "GDM Mapper with VCard data (TO UPDATE BY GA)",
+					"detailsURL" : "http://ot4i.github.io/DFDL-JSON-GDM-tutorial/index.html",
+					"stepsURL" : "http://ot4i.github.io/DFDL-JSON-GDM-tutorial/index.html",
 					"zipURL" : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/Tutorial1PI.zip",
 					"barFile" : "<workspace>/BARfiles/TutorialONE.bar",
 					"visible"	: "true",
@@ -233,88 +187,7 @@
 						}
 					]
 				},
-				{
-					"name" : "Tutorial four",
-					"version"	: "",
-					"iibVersions"	: "10.*-11.*",
-					"shortDesc" : "This is a short description of Tutorial four! :)",
-					"detailsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial1/en/details.html",
-					"stepsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial1/en/steps.html",
-					"zipURL" : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/Tutorial1PI.zip",
-					"barFile" : "<workspace>/BARfiles/TutorialONE.bar",
-					"visible"	: "true",
-					"tags"	: "mq;scenarios",
-					"isPattern"	: "false",
-					"isFavorite": "true",
-					"isDefault" : "false",
-					"projects"	: "Tutorial1App:BARfiles",
-					"editorResPaths" : 
-					[
-						{
-						"id" : "MainFlow",
-						"editor" : "flow",
-						"wspath" : "<workspace>/Tutorial1App/bschema1/Tutorial1Flow.msgflow"
-						},
-						{
-						"id" : "MainSchema",
-						"editor" : "dfdl",
-						"wspath" : "<workspace>/Tutorial1App/taderc99.xsd"
-						},
-						{
-						"id" : "MainScript",
-						"editor" : "text",
-						"wspath" : "<workspace>/Tutorial1App/iib_queues_create.mqsc"
-						}
-					],
-					"deployedResources" : 
-					[
-						{
-						"type" : "application",
-						"path" : "Tutorial1App"
-						}
-					]
-				},
-				{
-					"name" : "Tutorial Five",
-					"version"	: "",
-					"iibVersions"	: "10.*-11.*",
-					"shortDesc" : "This is a short description of Tutorial Five! :)",
-					"detailsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial2/en/details.html",
-					"stepsURL" : "http://ot4i.github.io/ot4i.tutorials/tutorials/tutorial2/en/steps.html",
-					"zipURL" : "https://github.com/ot4i/ot4i.tutorials/releases/download/V1/Tutorial2PI.zip",
-					"barFile" : "<workspace>/BARfiles/TutorialTWO.bar",
-					"visible"	: "true",
-					"tags"	: "mq;scenarios",
-					"isPattern"	: "true",
-					"isFavorite": "true",
-					"isDefault" : "true",
-					"projects"	: "Tutorial2App:BARfiles",
-					"editorResPaths" : 
-					[
-						{
-						"id" : "MainFlow",
-						"editor" : "flow",
-						"wspath" : "<workspace>/Tutorial2App/Tutorial2Flow.msgflow"
-						},
-						{
-						"id" : "MainEsql",
-						"editor" : "",
-						"wspath" : "<workspace>/Tutorial2App/HTTPFlow_Compute.esql"
-						},
-						{
-						"id" : "MainMessage",
-						"editor" : "text",
-						"wspath" : "<workspace>/Tutorial2App/HTTPFlow_inputMessage.xml"
-						}
-					],
-					"deployedResources" : 
-					[
-						{
-						"type" : "application",
-						"path" : "Tutorial2App"
-						}
-					]
-				}
+				
 			]
 		}
 	]
