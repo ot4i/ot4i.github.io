@@ -70,6 +70,37 @@
 							]
 				},
 				{
+		            "name"          : "HTTP Input to drive a message flow",
+		            "version"		: "1.0",
+		            "iibVersions"	: "10.*-11.*",
+		            "shortDesc"     : "Learn how to use an HTTP Input node to parse JSON data in an IBM Integration Bus message flow by exploring this simple example.",
+		            "detailsURL"    : "http://cathyyoung.github.io/ot4i.tutorials/tutorialHTTPInputApplication/en/details.html",
+		            "stepsURL"      : "http://cathyyoung.github.io/ot4i.tutorials/tutorialHTTPInputApplication/en/steps.html",
+		            "zipURL"        : "http://cathyyoung.github.io/ot4i.tutorials/tutorialHTTPInputApplication/PI_HTTPInputApplication.zip",
+		            "barFile"       : "<workspace>/HTTPInputApplication/HTTPInputApplication.bar",
+		            "visible"		: "true",
+		            "tags"			: "HTTP;transformation",
+		            "isPattern"		: "false",
+		            "isFavorite"	: "true",
+		            "durationText":"This tutorial takes approximately",
+		            "durationTime":"5 minutes",
+		            "resourceToOpen":"MainFlow",
+		            "projects"		: "HTTPInputApplication",
+		            "editorResPaths"   : [
+		            						{
+		            							"id" : "MainFlow",
+		            							"editor" : "flow",
+		            						  	"wspath" : "<workspace>/HTTPInputApplication/HTTPInputMessageFlow.msgflow"
+		            						}
+		            					],
+					"deployedResources" : [
+								{
+								"type": "application",
+								"path": "HTTPInputApplication"
+								}
+							]
+				},
+				{
 					"name" : "Tutorial One",
 					"version"	: "",
 					"iibVersions"	: "10.*-11.*",
