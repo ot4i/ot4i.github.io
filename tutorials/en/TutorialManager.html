@@ -29,20 +29,19 @@
     	
     	<script src="../../js/iibv10/json2.js"></script>
     	<script src="../../js/iibv10/js2java.js"></script>
-
   		<script src="../../js/vendor/modernizr.js"></script>
 	</head>
 <!-- header::End -->
 <!-- body::Start -->
 		<body onload="fillList()">
   <!-- body content here -->
+  <div class="manager-container">
   <div class="row">
-    <div class="small-1 medium-1 large-1 columns"> 
-      <a class="item right"><img class="icon-image" src="../../images/icons/ibmdesign/booklet-guide_128.png"></a> 
-    </div>
-    <div class="small-11 medium-11 large-11 columns">
-      <h3>Show Me</h3>
-    </div>
+    <div class="large-offset-2 medium-offset-2 small-offset-2">
+		<div class="row">
+			  <h3><img class="icon-image" src="../../images/icons/ibmdesign/booklet-guide_128.png"> Show Me</h3>
+		</div>
+	</div>
   </div> 
 
   <div class="row">
@@ -61,18 +60,16 @@
 
                 <ul class="tabs"> 
                   <li class="tab-title tab-title-big active"> <!-- onclick="resetSelection('styledSelect_Tool_Capabilities');"-->
-                    <a href="#panel11" onclick="show('panel11')">Tool Capabilities</a>
+                    <a href="javascript:;" onclick="show('panel11')">Tool Capabilities</a>
                   </li>
                   <li class="tab-title tab-title-big">
-                    <a href="#panel21" onclick="show('panel21')">Scenarios</a> <!--onclick="resetSelection('styledSelect_Scenarios');"-->
+                    <a href="javascript:;" onclick="show('panel21')">Scenarios</a> <!--onclick="resetSelection('styledSelect_Scenarios');"-->
                   </li>
                 </ul>
                 <div class="tabs-content">
                   <div class="content active" id="panel11">
                     <div class="row">
-                    <p>
-                      Explore Integration Bus concepts by following simple tutorials
-                    </p>
+                    <h5 class="subheader text-center tabdescription">Explore Integration Bus concepts by following simple tutorials</h5>
                     <div>
                       <select size="10" id="styledSelect_Tool_Capabilities" name="tutorials" onchange="resetSelection('styledSelect_Scenarios');changeFunc('styledSelect_Tool_Capabilities')">
                       </select>
@@ -82,13 +79,13 @@
                     </p>
 
                     <div class="row">
-                      <div class="small-offset-3 small-3 medium-offset-3 medium-3 large-offset-3 large-3 columns">
+                      <div class="small-offset-3 small-3 medium-offset-3 medium-3 large-offset-3 large-3 columns text-center">
                         <action>
                           <div class="small radius button" id="viewDetails" onclick="viewDetails('styledSelect_Tool_Capabilities')"> View Details
                           </div>
                         </action>
                       </div>
-                      <div class="small-3 medium-3 large-3 columns left">
+                      <div class="small-3 medium-3 large-3 columns left text-center">
                         <action>
                           <div class="small radius button" id="startTutorial" onclick="startTutorial('styledSelect_Tool_Capabilities')"> Start Tutorial
                           </div>
@@ -96,62 +93,10 @@
                       </div>
                     </div>
                     <hr>
-                    <div class="row">
-                      <p> ALL-TIME FAVORITES </p>
-                    </div><!-- row -->
-
-                    <div class="row">    
-                      <!-- Favourites -->
-                      
-                        
-                        <div class="large-1 small-1 columns">
-                        
-                        <p></p>
-                        </div>
-                        <div class="large-3 small-3 columns">
-                          <dl>
-                            <dt><a id="fav_Integration services (SOAP/HTTP inputs)" href="#" onclick="viewDetailsFav('Integration services (SOAP/HTTP inputs)')"> Integration services (SOAP/HTTP inputs) </a></dt>
-                            <dd>Learn about integration services that use SOAP/HTTP inputs in IBM Integration Bus by exploring this simple example. </dd>
-                          </dl>
-                        </div>
-                       
-                      
-                        
-                        <div class="large-1 small-1 columns">
-                        
-                          <img class="icon-image center" src="../../images/icons/ibmdesign/flow_128.png">
-                        
-                        <p></p>
-                        </div>
-                        <div class="large-3 small-3 columns">
-                          <dl>
-                            <dt><a id="fav_Tutorial One" href="#" onclick="viewDetailsFav('Tutorial One')"> Tutorial One </a></dt>
-                            <dd>This is a short description of Tutorial One! :) </dd>
-                          </dl>
-                        </div>
-                       
-                      
-                        
-                        <div class="large-1 small-1 columns">
-                        
-                        <p></p>
-                        </div>
-                        <div class="large-3 small-3 columns">
-                          <dl>
-                            <dt><a id="fav_Tutorial Two" href="#" onclick="viewDetailsFav('Tutorial Two')"> Tutorial Two </a></dt>
-                            <dd>This is a short description of Tutorial Two! :) </dd>
-                          </dl>
-                        </div>
-                       
-                      
-                      <!-- End Favourites -->
-                    </div><!-- row -->
                     </div>
                   </div>
                   <div class="content" id="panel21">
-                    <p>
-                      Explore powerful Integration Bus capabilities through integrated scenarios
-                    </p>
+						<h5 class="subheader text-center tabdescription">Explore powerful Integration Bus capabilities through integrated scenarios</h5>
                   <div>
                     <select size="10" id="styledSelect_Scenarios" name="tutorials" onchange="resetSelection('styledSelect_Tool_Capabilities');changeFunc('styledSelect_Scenarios')">
                     </select>
@@ -162,13 +107,13 @@
                   </p>
 
                   <div class="row"> 
-                    <div class="small-offset-3 small-3 medium-offset-3 medium-3 large-offset-3 large-3 columns">
+                    <div class="small-offset-3 small-3 medium-offset-3 medium-3 large-offset-3 large-3 columns text-center">
                       <action>
                         <div class="small radius button" id="viewDetails" onclick="viewDetails('styledSelect_Scenarios')"> View Details
                         </div>
                       </action>
                     </div>
-                    <div class="small-3 medium-3 large-3 columns left">
+                    <div class="small-3 medium-3 large-3 columns left text-center">
                       <action>
                         <div class="small radius button" id="startTutorial" onclick="startTutorial('styledSelect_Scenarios')"> Start Tutorial
                         </div>
@@ -176,56 +121,6 @@
                     </div>
                   </div>
                   <hr>
-                  <div class="row">
-                    <p> ALL-TIME FAVORITES </p>
-                  </div><!-- row -->
-
-                  <div class="row">    
-                    <!-- Favourites -->
-                    
-                      
-                        <div class="large-1 small-1 columns">
-                        
-                        <p></p>
-                        </div>
-                      <div class="large-3 small-3 columns">
-                        <dl>
-                          <dt> <a id="fav_GDM Mapper with VCard data" href="#" onclick="viewDetailsFav('GDM Mapper with VCard data')"> GDM Mapper with VCard data </a> </dt>
-                          <dd> This is a short description of Tutorial One! :) </dd>
-                        </dl>
-                      </div>
-                     
-                    
-                      
-                        <div class="large-1 small-1 columns">
-                        
-                          <img class="icon-image center" src="../../images/icons/ibmdesign/flow_128.png">
-                        
-                        <p></p>
-                        </div>
-                      <div class="large-3 small-3 columns">
-                        <dl>
-                          <dt> <a id="fav_Tutorial four" href="#" onclick="viewDetailsFav('Tutorial four')"> Tutorial four </a> </dt>
-                          <dd> This is a short description of Tutorial four! :) </dd>
-                        </dl>
-                      </div>
-                     
-                    
-                      
-                        <div class="large-1 small-1 columns">
-                        
-                        <p></p>
-                        </div>
-                      <div class="large-3 small-3 columns">
-                        <dl>
-                          <dt> <a id="fav_Tutorial Five" href="#" onclick="viewDetailsFav('Tutorial Five')"> Tutorial Five </a> </dt>
-                          <dd> This is a short description of Tutorial Five! :) </dd>
-                        </dl>
-                      </div>
-                     
-                    
-                    <!-- End Favourites -->
-                  </div><!-- row -->
                   </div>
                 </div><!-- Tab content -->
               </div>
@@ -234,7 +129,8 @@
         </div><!-- columns-11 --> 
       </div><!-- row -->
     </div><!-- columns-12 -->
-  </div><!-- row --></body>
+  </div><!-- row -->
+ </div></body>
 		<script src="../../js/vendor/jquery.js"></script>
 		<script src="../../js/vendor/foundation.min.js"></script>
 		<script src="../../js/main.js"></script>
