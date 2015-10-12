@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><!-- 
+
+(C) COPYRIGHT International Business Machines Corp., 2009
+
+All Rights Reserved * Licensed Materials - Property of IBM
+
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="copyright" content="Copyright IBM Corporation 2008" />
+<meta name="DC.Rights.Owner" content="Copyright IBM Corporation 2008" />
+<meta name="abstract" content="Use the Message Request Response Correlator pattern to accept requests from many client applications on a single queue, and to return responses to the correct client."/>
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../../css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="../../css/bip4.css" />
+<title>Message Request Response Correlator pattern</title>
+<script language="JavaScript" src="../../help/LiveHelp.js"> </script></head>
+<body id="mbi.mrrc.overview">
+<h1 class="topictitle1"><span>Message Request Response Correlator</span> pattern</h1>
+<div><p class="shortdesc">Use the <span>Message Request Response Correlator</span> pattern to accept requests
+from many client applications on a single queue, and to return responses
+to the correct client. </p>
+<div class="image"><img src="correlator.gif" alt="A diagram showing the behavior of the pattern. A number of requester applications send messages to the broker. The reply address of the requester is stored before the message is forwarded to the provider and restored when a response is received from the provider." /></div></div>
+<div class="section"><h2 class="sectiontitle">The context</h2>
+<p>Client applications often have to access a server application. The requests from the client applications
+and the responses from the server can be mediated by being passed through an intermediary or Enterprise 
+Service Bus (ESB) such as IBM Integration Bus. The client applications specify in their request the 
+specific response queue on which the response is expected to be received.</p>
+<p>Messaging systems provide a mechanism for ensuring that the response message in a request-reply
+interaction can be routed to the correct originating application or client instance. Typically this 
+solution involves passing a 'reply-to address' as part of the message header. The receiving application 
+is then able to extract this information and send the response to the appropriate queue. If a mediation 
+is introduced into the interaction, two separate request-reply interactions are established and you must 
+ensure that the response messages are sent to the correct destination in each case.</p>
+<p>If many such clients are interacting with a single server
+application, typically only a single mediation is used. Standard practice
+is for the server application and the mediation to each provide a
+single request queue. The mediation also uses a single response queue
+for processing reply messages from the server application. If each
+client provides its own response queue, a mechanism is required
+to ensure that each reply message is sent to the correct queue.</p>
+</div>
+<div class="section"><h2 class="sectiontitle">The problem</h2>
+<p>An IBM Integration flow mediates between a requester and provider. 
+The incoming message contains the reply address of the requester, but the message 
+that is forwarded to the provider application must contain the reply address of the 
+message flow. When the provider application responds to the message flow, it has to match
+each response to the request sent by the client. </p>
+</div>
+<div class="section"><h2 class="sectiontitle">Selection guidance</h2>
+<p>Use this pattern when you have a number of requesters that have to send messages
+to a provider; receive responses on a queue that is specific to the requester; and when 
+both requests and responses are mediated through the broker. 
+You can use the pattern to pass messages of any type, and you have the option to validate 
+the message, for example, to protect providers from incorrectly formatted messages. </p>
+</div>
+<div class="section"><h2 class="sectiontitle">Solution</h2></div>
+<p> The reply-to information from each client request in the mediation flow is
+stored before forwarding the message to the provider.
+When responses are received from the provider, correlation information is used to retrieve and 
+restore the correct reply address of the original requester, and to store this information for 
+subsequent retrieval.</p>
+</body>
+</html>
