@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><!-- 
+
+(C) COPYRIGHT International Business Machines Corp., 2009
+
+All Rights Reserved * Licensed Materials - Property of IBM
+
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="copyright" content="Copyright IBM Corporation 2008" />
+<meta name="DC.Rights.Owner" content="Copyright IBM Corporation 2008" />
+<meta name="abstract" content="Use the Service Facade pattern to accept requests from many client applications on a single queue, and to return responses to the correct client."/>
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../../css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="../../css/bip4.css" />
+<title>Service Facade pattern</title>
+<script language="JavaScript" src="../../help/LiveHelp.js"> </script></head>
+<body id="sen.sf.overview">
+<h1 class="topictitle1"><span></span>Service Facade pattern</h1>
+<div><p class="shortdesc">Use a Service Facade pattern to provide loose coupling between a 
+service requester and functionality that is provided by an application or 
+capability that is not service-enabled. 
+The loose coupling conceals the complexities of the provider and presents a standard web service interface.</p>
+A Service Facade pattern also introduces a mediation point for the application of standard functions 
+such as logging.</div>
+<div class="image"><img src="facade.gif" alt="A diagram showing the behavior of the pattern. Applications send service requests to the broker, which fulfills these requests by using functionality which does not provide a service interface." />
+<div class="section"><h2 class="sectiontitle">The context</h2>
+<p>When an enterprise
+architecture moves towards a service-oriented architecture, it is often
+necessary to accommodate existing legacy systems that run large parts
+of the business, but that do not have a service capability. These
+applications often use functions that must be accessible to
+newer service-enabled software packages, but that offer access only through adapters, messaging, or other
+non-service-oriented integration techniques.</p>
+</div>
+<div class="section"><h2 class="sectiontitle">The problem</h2></div>
+<p>Legacy applications
+do not fit naturally into a service-oriented architecture (SOA) environment and changes to such systems
+are expensive and require scarce skills. The problem is to find a way of
+integrating such systems with newer service-oriented packages and
+applications. In particular, it is necessary to create a bridge between
+the synchronous HTTP protocol that is generally used with web services, 
+and the messaging protocols that are often used by legacy applications.</p>
+<div class="section"><h2 class="sectiontitle">Selection guidance</h2></div>
+<p>This pattern is
+appropriate when an enterprise wants to present a service interface to
+requesting clients as part of an SOA environment, but provider
+applications cannot easily be upgraded to provide service interfaces.</p>
+<p>This pattern is used where provider applications provide an XML interface and client
+applications support calls to web services. The pattern can be extended
+with transforms to support a service facade to applications with non-XML
+interfaces over WebSphere MQ.</p>
+</div>
+</body></html>
