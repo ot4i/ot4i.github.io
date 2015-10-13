@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><!-- 
+
+(C) COPYRIGHT International Business Machines Corp., 2009
+
+All Rights Reserved * Licensed Materials - Property of IBM
+
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="copyright" content="Copyright IBM Corporation 2008" />
+<meta name="DC.Rights.Owner" content="Copyright IBM Corporation 2008" />
+<meta name="abstract" content="Use the Message Splitter pattern to accept requests from many client applications on a single queue, and to return responses to the correct client."/>
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../../css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="../../css/bip4.css" />
+<title>Message Splitter  pattern</title>
+<script language="JavaScript" src="../../help/LiveHelp.js"> </script></head>
+<body id="mbi.mrrc.overview">
+<h1 class="topictitle1">Message Splitter pattern</h1>
+<div><p class="shortdesc">Use a Message Splitter pattern to split a large XML message 
+into smaller elements for processing by one or more targets. </p>
+<div class="image"><img src="splitter.gif" alt="Diagram showing the behavior of the pattern." align="middle"/></div></div>
+<div class="section"><h2 class="sectiontitle">The context</h2><p></p>
+<p class="MsoNormal">You want to share information which has accumulated within an
+application over a period of time, with other applications. 
+Typical examples might be sales data that has accumulated over a day, 
+or information updates that are received from partners. The data is accumulated over
+a given time period and transmitted as a single large message. The end of
+the day processing at the target application, or target applications, requires that each element
+is processed individually.</p>
+<p class="MsoNormal">Alternatively, an application might generate a
+message containing a number of records that must be distributed; for example, where one application 
+maintains and distributes reference data.<span
+	style="mso-spacerun:yes"></span></p>
+</div>
+<div class="section"><h2 class="sectiontitle">The problem</h2>
+<p>Large messages which contain repetitive and processing structures can cause excessive
+memory use, which has a potential impact on other message processes and can result in broker failure. 
+This pattern addresses the problem of routing the elements of a large
+message to different targets according to defined routing rules.</p>
+<div class="section"><h2 class="sectiontitle">Selection guidance</h2>
+<p>Use this pattern for applications that store information about a number of business transactions 
+and transmit this information to one or more target applications in batches.
+It can be used to handle large messages, without excessive memory use.</p>
+<p>This pattern can be used when either the source application or target applications cannot make or process
+near real-time service calls, or when batching of information is required for business reasons.
+</p>
+</div>
+<div class="section"><h2 class="sectiontitle">Solution</h2></div>
+<p> The solution is to implement a message flow that uses a mutable message tree, so that repeatable elements 
+can be deleted as they are processed. Partial parsing enables single elements to be parsed as required and, 
+because these elements are deleted on completion, the in-memory tree is prevented from growing linearly 
+with the number of elements.
+As each element is extracted it is routed to the appropriate target application.
+</p>
+<p>The input message and all output messages are processed in a single transaction; all output messages are
+persistent. A failure to read the XML input message causes the entire transaction to fail, but errors 
+processing a single element can either add the failed element to a queue for later processing, or cause the 
+entire transaction to fail.
+</p>
+</div></body>
+</html>
