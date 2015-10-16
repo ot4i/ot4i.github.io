@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><!-- 
+
+(C) COPYRIGHT International Business Machines Corp., 2009
+
+All Rights Reserved * Licensed Materials - Property of IBM
+
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="copyright" content="Copyright IBM Corporation 2008" />
+<meta name="DC.Rights.Owner" content="Copyright IBM Corporation 2008" />
+<meta name="abstract" content="You can use the Service Proxy pattern to provide maximum decoupling between service requestors and service providers by introducing an additional level of indirection to the service."/>
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../../css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="../../css/bip4.css" />
+<title>Service Proxy pattern</title>
+<script language="JavaScript" src="../../../help/LiveHelp.js"></script></head>
+<body id="sv.sp.overview">
+<h1 class="topictitle1"><span>Service Proxy</span> pattern</h1>
+<div>
+<p class="shortdesc">Use this pattern to provide maximum decoupling between service requesters and service 
+providers by introducing an additional level of indirection to the service.</p>
+<p>In its most basic form the Service Proxy pattern hides the true location of a service implementation. 
+The pattern is also of particular value in providing a management point for access control,
+request tracking, and auditing.</p>
+<div class="image"><img src="./serviceproxy.gif" alt="Diagram of service proxy architecture"></img></div>
+
+</div>
+<div class="section"><h2><a name="ServiceProxy-Context">The context</a></h2>
+<p>The client must call an operation on a service. The client must not access the service directly, 
+because the address of the endpoint at which the service is located might change or the actual endpoint 
+address might change. The actual endpoint address is hidden so that access to the service 
+can be controlled.</p>
+
+</div>
+<div class="section"><h2><a name="ServiceProxy-Problem">The problem</a></h2>
+<p>How to make services available to clients in a controlled manner without exposing the actual address 
+of the endpoint at which the service is located.</p>
+
+</div>
+<div class="section"><h2><a name="ServiceProxy-SelectionGuidance">Selection Guidance</a></h2>
+<p>Use this pattern when:</p>
+<ul>
+	<li>Access to a service must be provided through a control point, without exposing the actual location 
+	(endpoint address) of the service to the clients.</li>
+	<li>Some form of control (access management, authorization, auditing, or logging) must be applied every 
+	time this service is activated.</li>
+</ul>
+<p>When services are exposed beyond organizational, or departmental boundaries, issues, such as 
+security, maintenance of audit trails, reliability, quality of service, and communications compatibility 
+must be considered.</p>
+<p>It is desirable to retain the flexibility of service deployment. For example, 
+being able to move the service to a different server without impacting any clients of that service by 
+making it seem that the address of the service endpoint has not changed.</p>
+<p>The protocol bindings that are supported by the service might not be appropriate 
+for a particular set of 
+clients. One solution is to modify the service so that it supports the required protocols, but in many 
+cases this solution might not be desirable or possible.</p>
+<p>You might want to hide the true location of the service so that all clients must access 
+it indirectly through a specific control point. Hiding the true location of the service allows  
+audit capabilities or additional client authentication checks to be added.</p>
+
+</div>
+<div class="section"><h2><a name="SimpleServiceProxy-Solution">The solution</a></h2>
+
+<p>The target service is hidden by deploying an enterprise service bus (ESB) 
+mediation that implements the same interface. 
+This mediation acts as a virtual service, or proxy, that redirects all requests to the real service
+provider. Clients see only the virtual service, which seems to be the actual provider of the service.</p>
+
+<p>In some cases the virtual service might support a different set of protocol bindings to 
+those bindings that are supported 
+by the real service, therefore providing the necessary protocol conversion as part of the mediation.</p>
+<p>
+
+In its most simple form, the mediation redirects each request to a preconfigured endpoint address. 
+A more flexible approach uses a query to a service registry to determine the actual address, caching
+this value for use with subsequent requests.</p>
+
+<p>The virtual service, or mediation, implements a number of additional features. In a typical 
+implementation the mediation logs each request for audit purposes. The virtual service 
+might also provide an 
+additional level of access control, checking the credentials that are 
+associated with each incoming request. 
+A more sophisticated implementation might also provide identity mapping 
+between different security domains.</p>
+
+
+</div>
+</body>
+</html>
